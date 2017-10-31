@@ -7,11 +7,24 @@
   *{ リスト全体をループする： #{list items: リスト変数, as: ループ中で参照する変数名} }*
   #{list items: entries, as: 'entry'}
     <li>
-      ${entry.id}:
-      ${entry.name}さん
-      (${entry.gender == 1 ? '男性' : '女性'})
+      ${entry.name}
+      ${entry.comment}
+      ${entry.isEnd}
     </li>
   #{/list}
 </ul>
+<h2>add your task</h2>
+
+<form action="@{addTask()}" method="post">
+  <p>
+    <textarea name="taskName" cols="20" rows="1">(本文を入力して下さい)</textarea>
+  </p>
+  <p>
+    <textarea name="comment" cols="20" rows="2">(本文を入力して下さい)</textarea>
+  </p>
+  <p>
+    <input type="submit" />
+  </p>
+</form>
 
 

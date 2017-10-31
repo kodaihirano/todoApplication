@@ -48,12 +48,9 @@ public class TaskManager extends Controller {
 		Logger.info("hash:%s", hashedInput.toString());
 		Logger.info("hash:%s", usr.hashedPassword.toString());
 		if (Arrays.equals(hashedInput, usr.hashedPassword)) {
-			session.put("user", usr);
+			session.put("user", usr.name);
 			list();
 		} else {
-			String name = params.get("name");
-			TMUser user = new TMUser(name, password);
-			user.save();
 			signInForm();
 		}
 	}
@@ -76,9 +73,14 @@ public class TaskManager extends Controller {
 	}
 
 	public static void list() {
-		List<Task> tasks = Task.all().fetch();
+		List<Task> tasks = Task.find("taskHolder = ?1", session.get("user")).fetch();
 		renderArgs.put("entries", tasks);
 		render();
+	}
+	public static void addTask() {
+		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"));
+		task.save();
+		list();
 	}
 
 	public static void login() {
