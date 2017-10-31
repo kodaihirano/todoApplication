@@ -1,0 +1,19 @@
+*{<meta charset="utf-8">}*
+#{extends 'TaskManager/main.html' /}
+<h2>性別</h2>
+<form action="@{signIn()}" method="post">
+  <ul>
+    <li>
+      <input type="radio" name="gender" value="男性" />
+      男性
+    </li>
+    <li>
+      <input type="radio" name="gender" value="女性" />
+      女性
+    </li>
+  </ul>
+  <p>
+    <input type="submit" value="送信"/>
+    <input type="reset" value="入力内容をリセットする">
+  </p>
+</form>
