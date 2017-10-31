@@ -7,15 +7,16 @@ import javax.persistence.*;
 import java.util.*;
 import java.nio.charset.*;
 import java.security.*;
+import java.math.*;
+
+import javax.xml.bind.*;
 
 @Entity
 public class TMUser extends Model {
-	public int id;
 	public String name;
 	public byte[] hashedPassword;
 
-	public TMUser(int id, String name, String password) {
-		this.id = id;
+	public TMUser(String name, String password) {
 		this.name = name;
 		try {
 			Charset charset = StandardCharsets.UTF_8;
