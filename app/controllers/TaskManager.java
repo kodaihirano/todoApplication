@@ -1,23 +1,15 @@
 package controllers;
 
-import play.*;
-import play.data.validation.*;
-
-import play.mvc.*;
-
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.*;
-import java.math.*;
+import java.util.Arrays;
+import java.util.List;
 
-import javax.xml.transform.Result;
-import javax.xml.bind.DatatypeConverter;
-
-import models.*;
-import models.sample.SampleEntry;
-import controllers.*;
+import models.TMUser;
+import models.Task;
+import play.mvc.Controller;
 
 public class TaskManager extends Controller {
 
@@ -101,6 +93,10 @@ public class TaskManager extends Controller {
 		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"));
 		task.save();
 		list();
+	}
+	
+	public static void accomplishTask() {
+		
 	}
 
 	public static void login() {
