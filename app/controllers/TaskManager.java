@@ -90,13 +90,13 @@ public class TaskManager extends Controller {
 	}
 
 	public static void addTask() {
-		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"));
+		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"), params.get("deadLine"));
 		task.save();
 		list();
 	}
-	
+
 	public static void accomplishTask() {
-		
+
 	}
 
 	public static void login() {

@@ -4,11 +4,11 @@
 
 <h3>全員</h3>
 <ul>
-  *{ リスト全体をループする： #{list items: リスト変数, as: ループ中で参照する変数名} }*
   #{list items: entries, as: 'entry'}
     <li>
       ${entry.name}
       ${entry.comment}
+      ${entry.deadLine}
       ${entry.isEnd}
     </li>
   #{/list}
@@ -23,8 +23,9 @@
     <textarea name="comment" cols="20" rows="2" placeholder="コメント"></textarea>
   </p>
   <p>
+    <textarea name="deadLine" cols="20" rows="1" placeholder="yyyyMMdd"></textarea>
+  </p>
+  <p>
     <input type="submit" />
   </p>
 </form>
-
-
