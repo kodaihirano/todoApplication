@@ -24,7 +24,7 @@ public class Task extends Model {
 		this.comment = comment;
 		Calendar c = Calendar.getInstance();
 		this.deadLine = c.getTime();
-		String dateStr = "20140101";
+//		String dateStr = "20140101";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         try {
 			this.deadLine = sdf.parse(deadLine);
@@ -33,5 +33,9 @@ public class Task extends Model {
 			e.printStackTrace();
 		}
 		isEnd = false;
+	}
+	public void accomplishTask() {
+		isEnd = true;
+		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
 	}
 }

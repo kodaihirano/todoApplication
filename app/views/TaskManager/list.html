@@ -2,17 +2,26 @@
 #{extends 'TaskManager/main.html' /}
 <h2>アンケート回答一覧</h2>
 
-<h3>全員</h3>
-<ul>
+<h3>未完了のタスク</h3>
+<table border="1">
   #{list items: entries, as: 'entry'}
-    <li>
-      ${entry.name}
-      ${entry.comment}
-      ${entry.deadLine}
-      ${entry.isEnd}
-    </li>
+	<tr>
+		<td width="100">${entry.name}</td>
+		<td width="100">${entry.comment}</td>
+		<td width="200">${entry.deadLine}</td>
+		<td width="50">${entry.isEnd}</td>
+		<td>
+			<form action="@{accomplishTask()}" method="post">
+				<p>
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="完了"/>
+				</p>
+			</form>
+		</td>
+	</tr>
   #{/list}
-</ul>
+</table>
+
 <h2>add your task</h2>
 
 <form action="@{addTask()}" method="post">

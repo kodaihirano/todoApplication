@@ -84,7 +84,8 @@ public class TaskManager extends Controller {
 	}
 
 	public static void list() {
-		List<Task> tasks = Task.find("taskHolder = ?1", session.get("user")).fetch();
+//		List<Task> tasks = Task.find("taskHolder = ?1", session.get("user")).fetch();
+		List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
 		renderArgs.put("entries", tasks);
 		render();
 	}
@@ -96,7 +97,11 @@ public class TaskManager extends Controller {
 	}
 
 	public static void accomplishTask() {
-
+		Long taskId = Long.parseLong(params.get("taskId"));
+		System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
+		Task task = Task.findById(taskId);
+		task.accomplishTask();
+		list();
 	}
 
 	public static void login() {
