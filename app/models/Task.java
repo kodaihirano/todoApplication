@@ -36,6 +36,7 @@ public class Task extends Model {
 	}
 	public void accomplishTask() {
 		isEnd = true;
-		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
+//		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
+		this.save();
 	}
 }

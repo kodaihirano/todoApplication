@@ -98,7 +98,7 @@ public class TaskManager extends Controller {
 
 	public static void accomplishTask() {
 		Long taskId = Long.parseLong(params.get("taskId"));
-		System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
+//		System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
 		Task task = Task.findById(taskId);
 		task.accomplishTask();
 		list();
