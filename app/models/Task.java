@@ -2,7 +2,6 @@ package models;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -22,10 +21,10 @@ public class Task extends Model {
 		this.taskHolder = taskHolder;
 		this.name = name;
 		this.comment = comment;
-		Calendar c = Calendar.getInstance();
-		this.deadLine = c.getTime();
+//		Calendar c = Calendar.getInstance();
+//		this.deadLine = c.getTime();
 //		String dateStr = "20140101";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
 			this.deadLine = sdf.parse(deadLine);
 		} catch (ParseException e) {
@@ -33,6 +32,21 @@ public class Task extends Model {
 			e.printStackTrace();
 		}
 		isEnd = false;
+	}
+	public void editTask(String name, String comment, String deadLine) {
+		this.name = name;
+		this.comment = comment;
+//		Calendar c = Calendar.getInstance();
+//		this.deadLine = c.getTime();
+//		String dateStr = "20140101";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+			this.deadLine = sdf.parse(deadLine);
+		} catch (ParseException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+        this.save();
 	}
 	public void toggleIsEnd() {
 		isEnd = !isEnd;

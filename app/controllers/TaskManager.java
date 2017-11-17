@@ -4,6 +4,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -111,15 +112,21 @@ public class TaskManager extends Controller {
 	public static void editTask() {
 		Long taskId = Long.parseLong(params.get("taskId"));
 		Task task = Task.findById(taskId);
+		session.put("taskId", taskId);
 		session.put("taskName", task.name);
 		session.put("comment", task.comment);
-		session.put("deadLine", task.deadLine);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String deadLine = sdf.format(task.deadLine);
+		session.put("deadLine", deadLine);
 		render();
 	}
-	public static void postTask() {
+	public static void postEditedTask() {
+		Long taskId = Long.parseLong(params.get("taskId"));
+		Task task = Task.findById(taskId);
+		task.editTask(params.get("taskName"), params.get("comment"), params.get("deadLine"));
 		list();
 	}
-	
+
 	public static void deleteTask() {
 		Long taskId = Long.parseLong(params.get("taskId"));
 		Task task = Task.findById(taskId);
