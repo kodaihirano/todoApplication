@@ -1,0 +1,18 @@
+*{<meta charset="utf-8">}*
+#{extends 'TaskManager/main.html' /}
+<h2>タスクの編集</h2>
+
+<form action="@{postTask()}" method="post">
+  <p>
+    <textarea name="taskName" cols="20" rows="1" placeholder="タイトル" value="${session.taskName}"></textarea>
+  </p>
+  <p>
+    <textarea name="comment" cols="20" rows="2" placeholder="コメント"  value="${session.comment}"></textarea>
+  </p>
+  <p>
+    <textarea name="deadLine" cols="20" rows="1" placeholder="yyyyMMdd"  value="${session.deadLine}"></textarea>
+  </p>
+  <p>
+    <input type="submit" />
+  </p>
+</form>

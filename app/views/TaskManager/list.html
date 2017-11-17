@@ -1,7 +1,5 @@
 *{<meta charset="utf-8">}*
 #{extends 'TaskManager/main.html' /}
-<h2>アンケート回答一覧</h2>
-
 <h3>未完了のタスク</h3>
 <table border="1">
   #{list items: entries, as: 'entry'}
@@ -10,11 +8,54 @@
 		<td width="100">${entry.comment}</td>
 		<td width="200">${entry.deadLine}</td>
 		<td width="50">${entry.isEnd}</td>
-		<td>
-			<form action="@{accomplishTask()}" method="post">
+		<td width="30">
+			<form action="@{toggleIsEnd()}" method="post">
 				<p>
 					<input type="hidden" name="taskId" value="${entry.id}" />
 					<input type="submit" value="完了"/>
+				</p>
+			</form>
+		</td>
+		<td>
+			<form action="@{deleteTask()}" method="post">
+				<p>
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="削除"/>
+				</p>
+			</form>
+		</td>
+		<td>
+			<form action="@{editTask()}" method="post">
+				<p>
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="削除"/>
+				</p>
+			</form>
+		</td>
+	</tr>
+  #{/list}
+</table>
+<h3>完了済のタスク</h3>
+<table border="1">
+  #{list items: entries2, as: 'entry'}
+	<tr>
+		<td width="100">${entry.name}</td>
+		<td width="100">${entry.comment}</td>
+		<td width="200">${entry.deadLine}</td>
+		<td width="50">${entry.isEnd}</td>
+		<td width="30">
+			<form action="@{toggleIsEnd()}" method="post">
+				<p>
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="未完了"/>
+				</p>
+			</form>
+		</td>
+		<td>
+			<form action="@{deleteTask()}" method="post">
+				<p>
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="削除"/>
 				</p>
 			</form>
 		</td>

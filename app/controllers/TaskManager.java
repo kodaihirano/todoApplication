@@ -46,6 +46,9 @@ public class TaskManager extends Controller {
 				session.put("user", usr.name);
 				list();
 			} else {
+				validation.current().addError("field", "password is not correct", "variables1", "variables2");
+				params.flash();
+				validation.keep();
 				signInForm();
 			}
 		} else {
@@ -68,8 +71,8 @@ public class TaskManager extends Controller {
 	}
 
 	public static void signUpConfirm() {
-
 		validation.required("name", params.get("name"));
+		validation.required("password", params.get("password"));
 		if (!TMUser.find("name = ?1", params.get("name")).fetch().isEmpty()) {
 			validation.current().addError("field", "this account name is already being used", "variables1", "variables2");
 		}
@@ -82,11 +85,13 @@ public class TaskManager extends Controller {
 		session.put("password", params.get("password"));
 		render();
 	}
-
+	static int page = 0;
 	public static void list() {
-//		List<Task> tasks = Task.find("taskHolder = ?1", session.get("user")).fetch();
-		List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
-		renderArgs.put("entries", tasks);
+		List<Task> tasksOnGoing = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), false).fetch();
+		List<Task> tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
+//		List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
+		renderArgs.put("entries", tasksOnGoing);
+		renderArgs.put("entries2", tasksAccomplished);
 		render();
 	}
 
@@ -96,11 +101,29 @@ public class TaskManager extends Controller {
 		list();
 	}
 
-	public static void accomplishTask() {
+	public static void toggleIsEnd() {
 		Long taskId = Long.parseLong(params.get("taskId"));
 //		System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
 		Task task = Task.findById(taskId);
-		task.accomplishTask();
+		task.toggleIsEnd();
+		list();
+	}
+	public static void editTask() {
+		Long taskId = Long.parseLong(params.get("taskId"));
+		Task task = Task.findById(taskId);
+		session.put("taskName", task.name);
+		session.put("comment", task.comment);
+		session.put("deadLine", task.deadLine);
+		render();
+	}
+	public static void postTask() {
+		list();
+	}
+	
+	public static void deleteTask() {
+		Long taskId = Long.parseLong(params.get("taskId"));
+		Task task = Task.findById(taskId);
+		task.delete();
 		list();
 	}
 

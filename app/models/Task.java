@@ -34,8 +34,8 @@ public class Task extends Model {
 		}
 		isEnd = false;
 	}
-	public void accomplishTask() {
-		isEnd = true;
+	public void toggleIsEnd() {
+		isEnd = !isEnd;
 //		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
 		this.save();
 	}
