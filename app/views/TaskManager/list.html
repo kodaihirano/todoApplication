@@ -1,39 +1,49 @@
 *{
 <meta charset="utf-8">
 }* #{extends 'TaskManager/main.html' /}
-<style>
-  table {
-  	font-size:14px;
-  	border-color: #999;
-	border: 1px solid #bbb;
-    border-spacing: 0px;
-    border-collapse: collapse;
-  }
-  table td {
-  	padding: 5px;
-  }
-</style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
 
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script>
+	$(function() {
+		$('h1, h2, h3').click(function() {
+			$(this).addClass('animated bounceOutRight');
+		});
+		$("h1").click(
+				function() {
+					$.get("https://api.coindesk.com/v1/bpi/currentprice.json",
+							function(data) {
+								var json = JSON.parse(data);
+								var rate = json.bpi.USD.rate;
+								$("body").append(rate);
+							});
+				});
+	});
+</script>
 <h3>未完了のタスク</h3>
 <table border="1">
 	#{list items: entries, as: 'entry'}
 	<tr>
 		<td width="100">${entry.name}</td>
 		<td width="100">${entry.comment}</td>
-		<td width="200">${entry.deadLine.format('yyyy/MM/dd')}</td>
+		<td width="200">${entry.deadLine == null ? "未定" :
+			entry.deadLine.format('yyyy/MM/dd')}</td>
 		<td width="50">${entry.isEnd}</td>
-		<td width="50">
+		<td width="70">
 			<form action="@{toggleIsEnd()}" method="post">
 				<p>
-					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="完了" />
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-					  Button
-					</button>
-
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<button
+						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+						完了</button>
 				</p>
 			</form>
 		</td>
@@ -64,11 +74,13 @@
 		<td width="100">${entry.comment}</td>
 		<td width="200">${entry.deadLine}</td>
 		<td width="50">${entry.isEnd}</td>
-		<td width="50">
+		<td width="80">
 			<form action="@{toggleIsEnd()}" method="post">
 				<p>
-					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="未完了" />
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<button
+						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+						未完了</button>
 				</p>
 			</form>
 		</td>
@@ -101,3 +113,27 @@
 		<input type="submit" />
 	</p>
 </form>
+<style>
+body {
+	margin: 20px;
+}
+table {
+	font-size: 14px;
+	border-color: #999;
+	border: 1px solid #bbb;
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+table td {
+	padding: 5px;
+}
+
+table td form p {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
+

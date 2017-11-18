@@ -75,7 +75,8 @@ public class TaskManager extends Controller {
 		validation.required("name", params.get("name"));
 		validation.required("password", params.get("password"));
 		if (!TMUser.find("name = ?1", params.get("name")).fetch().isEmpty()) {
-			validation.current().addError("field", "this account name is already being used", "variables1", "variables2");
+			validation.current().addError("field", "this account name is already being used", "variables1",
+					"variables2");
 		}
 		if (validation.hasErrors()) {
 			params.flash(); // add http parameters to the flash scope
@@ -86,17 +87,20 @@ public class TaskManager extends Controller {
 		session.put("password", params.get("password"));
 		render();
 	}
+
 	static int page = 0;
+
 	public static void list() {
 		List<Task> tasksOnGoing = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), false).fetch();
 		List<Task> tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
-//		List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
+		// List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
 		renderArgs.put("entries", tasksOnGoing);
 		renderArgs.put("entries2", tasksAccomplished);
 		render();
 	}
 
 	public static void addTask() {
+		System.out.println("\n\n" + params.get("deadLine") + " is accomplished" + "\n\n");
 		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"), params.get("deadLine"));
 		task.save();
 		list();
@@ -104,22 +108,26 @@ public class TaskManager extends Controller {
 
 	public static void toggleIsEnd() {
 		Long taskId = Long.parseLong(params.get("taskId"));
-//		System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
+		// System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
 		Task task = Task.findById(taskId);
 		task.toggleIsEnd();
 		list();
 	}
+
 	public static void editTask() {
 		Long taskId = Long.parseLong(params.get("taskId"));
 		Task task = Task.findById(taskId);
-		session.put("taskId", taskId);
-		session.put("taskName", task.name);
-		session.put("comment", task.comment);
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String deadLine = sdf.format(task.deadLine);
-		session.put("deadLine", deadLine);
+		renderArgs.put("taskId", taskId);
+		renderArgs.put("taskName", task.name);
+		renderArgs.put("comment", task.comment);
+		if (task.deadLine != null) {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			String deadLine = sdf.format(task.deadLine);
+			renderArgs.put("deadLine", deadLine);
+		}
 		render();
 	}
+
 	public static void postEditedTask() {
 		Long taskId = Long.parseLong(params.get("taskId"));
 		Task task = Task.findById(taskId);

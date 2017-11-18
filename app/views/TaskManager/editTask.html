@@ -4,15 +4,15 @@
 <h2>タスクの編集</h2>
 
 <form action="@{postEditedTask()}" method="post">
-	<input type="hidden" name="taskId" value="${session.taskId}">
+	<input type="hidden" name="taskId" value="${taskId}">
 	<p>
-		<textarea name="taskName" cols="20" rows="1" placeholder="タイトル">${session.taskName}</textarea>
+		<textarea name="taskName" cols="20" rows="1" placeholder="タイトル">${taskName}</textarea>
 	</p>
 	<p>
-		<textarea name="comment" cols="20" rows="2" placeholder="コメント">${session.comment}</textarea>
+		<textarea name="comment" cols="20" rows="2" placeholder="コメント">${comment}</textarea>
 	</p>
 	<p>
-		<input type="date" name="deadLine" value="${session.deadLine}" />
+		<input type="date" name="deadLine" value="${deadLine}" />
 	</p>
 	<p>
 		<input type="submit" />
