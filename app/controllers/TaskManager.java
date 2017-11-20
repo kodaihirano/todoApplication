@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -88,14 +89,34 @@ public class TaskManager extends Controller {
 		render();
 	}
 
-	static int page = 0;
-
 	public static void list() {
+		int pageOnGoing = 0;
+		int pageAccomplished = 0;
+		int numTaskAtOnce = 5;
+		if (params.get("pageOnGoing") != null){
+			pageOnGoing = Integer.parseInt(params.get("pageOnGoing"));
+			System.out.println("\n\n" + "PageOnGoing:" + pageOnGoing + "\n\n");
+		}
+		if (params.get("pageAccomplished") != null){
+			pageAccomplished = Integer.parseInt(params.get("pageAccomplished"));
+		}
 		List<Task> tasksOnGoing = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), false).fetch();
 		List<Task> tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
 		// List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
-		renderArgs.put("entries", tasksOnGoing);
-		renderArgs.put("entries2", tasksAccomplished);
+		List<Task> entries1 = new ArrayList<Task>();
+		for (int i = pageOnGoing * numTaskAtOnce; i < (pageOnGoing + 1) * numTaskAtOnce && i < tasksOnGoing.size(); i++){
+			entries1.add(tasksOnGoing.get(i));
+//			System.out.println("\n\n" + "AddPageOnGoing:" + i + "\n\n");
+		}
+		List<Task> entries2 = new ArrayList<Task>();
+		for (int i = pageAccomplished * numTaskAtOnce; i < numTaskAtOnce && i < tasksAccomplished.size(); i++){
+			entries2.add(tasksAccomplished.get(i));
+		}
+		renderArgs.put("entries", entries1);
+		renderArgs.put("entries2", entries2);
+		renderArgs.put("pageOnGoing", pageOnGoing);
+		renderArgs.put("pageAccomplished", pageAccomplished);
+		renderArgs.put("pageOnGoingIsLast", numTaskAtOnce * (pageOnGoing + 1) >= tasksOnGoing.size());
 		render();
 	}
 
