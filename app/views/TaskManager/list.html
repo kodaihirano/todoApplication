@@ -35,9 +35,9 @@
 		<td width="100">${entry.name}</td>
 		<td width="100">${entry.comment}</td>
 		<td width="100">${entry.deadLine == null ? "未定" :
-			entry.deadLine.format('yyyy/MM/dd')}</td>
+		entry.deadLine.format('yyyy/MM/dd')}</td>
 		<td width="100">${entry.createdDay == null ? "謎" :
-			entry.createdDay.format('yyyy/MM/dd')}</td>
+		entry.createdDay.format('yyyy/MM/dd')}</td>
 		<td width="50">${entry.isEnd}</td>
 		<td width="70">
 			<form action="@{toggleIsEnd()}" method="post">
@@ -51,16 +51,16 @@
 		<td>
 			<form action="@{deleteTask()}" method="post">
 				<p>
-					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="削除" />
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="削除" />
 				</p>
 			</form>
 		</td>
 		<td>
 			<form action="@{editTask()}" method="post">
 				<p>
-					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="編集" />
+					<input type="hidden" name="taskId" value="${entry.id}" />
+					<input type="submit" value="編集" />
 				</p>
 			</form>
 		</td>
@@ -70,24 +70,24 @@
 <h3>完了済のタスク</h3>
 
 <p>
-#{if isOnAccomplished == false}
-<form action="@{list()}" method="get">
-	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
-	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
-	<input type="hidden" name="isOnAccomplished" value="true">
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-	on</button>
-</form>
-#{/if}
-#{else}
-<form action="@{list()}" method="get">
-	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
-	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
-	<input type="hidden" name="isOnAccomplished" value="false">
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-	off</button>
-</form>
-#{/else}
+	#{if isOnAccomplished == false}
+	<form action="@{list()}" method="get">
+		<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+		<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+		<input type="hidden" name="isOnAccomplished" value="true">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+		on</button>
+	</form>
+	#{/if}
+	#{else}
+	<form action="@{list()}" method="get">
+		<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+		<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+		<input type="hidden" name="isOnAccomplished" value="false">
+		<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+		off</button>
+	</form>
+	#{/else}
 </p>
 
 #{if pageAccomplished > 0}
@@ -117,20 +117,34 @@
 	#{/if}
 	#{list items: entries2, as: 'entry'}
 	<tr>
-		<td width="100">${entry.name}</td>
+		<td width="100" style="position: relative;">
+			<div ondblclick="kakunin(this)" style="position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  -webkit- transform: translateY(-50%);">${entry.name}</div>
+			<div style="display: none;position: absolute;top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  -webkit- transform: translateY(-50%);">
+				<form action="@{changeTaskName()}" method="post" >
+					<input type="textarea" name="taskName">
+				</form>
+			</div>
+		</td>
 		<td width="100">${entry.comment}</td>
 		<td width="100">${entry.deadLine == null ? "未定" :
-			entry.deadLine.format('yyyy/MM/dd')}</td>
+		entry.deadLine.format('yyyy/MM/dd')}</td>
 		<td width="100">${entry.createdDay == null ? "謎" :
-			entry.createdDay.format('yyyy/MM/dd')}</td>
+		entry.createdDay.format('yyyy/MM/dd')}</td>
 		<td width="50">${entry.isEnd}</td>
 		<td width="70">
-			<form action="@{toggleIsEnd()}" method="post">
+			<form action="@{toggleIsEnd()}" method="post" >
 				<p>
 					<input type="hidden" name="taskId" value="${entry.id}" />
-					<button
-						class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-						未完了</button>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >
+						未完了
+					</button>
 				</p>
 			</form>
 		</td>
@@ -138,7 +152,7 @@
 			<form action="@{deleteTask()}" method="post">
 				<p>
 					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="削除" />
+					type="submit" value="削除" />
 				</p>
 			</form>
 		</td>
@@ -146,7 +160,7 @@
 			<form action="@{editTask()}" method="post">
 				<p>
 					<input type="hidden" name="taskId" value="${entry.id}" /> <input
-						type="submit" value="編集" />
+					type="submit" value="編集" />
 				</p>
 			</form>
 		</td>

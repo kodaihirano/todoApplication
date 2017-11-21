@@ -171,6 +171,10 @@ public class TaskManager extends Controller {
 		}
 		render();
 	}
+	public static void changeTaskName() {
+		checkSignedIn();
+		list();
+	}
 
 	public static void postEditedTask() {
 		checkSignedIn();
@@ -203,6 +207,13 @@ public class TaskManager extends Controller {
 		checkSignedIn();
 		TMUser usr = TMUser.findById(Long.parseLong(session.get("userId")));
 		usr.delete();
+		List<Task> tasks = Task.find("taskHolderId = ?1", session.get("userId")).fetch();
+		tasks.forEach(e->e.delete());
+		session.remove("userId");
+		index();
+	}
+	public static void signOut() {
+		session.remove("userId");
 		index();
 	}
 

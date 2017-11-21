@@ -33,6 +33,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		// 					});
 		// 		});
 	});
+	function kakunin(obj){
+		$(obj).addClass('animated bounceOutRight');
+		var form = obj.parentNode.children[1];
+		form.style.display = 'inline';
+		$(form).addClass('animated bounceInLeft');
+	}
+
 </script>
 <body>
 	<h1>exp4TM</h1>
@@ -40,6 +47,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	<div class="topnav" id="myTopnav">
 		<a href="@{list()}">Home</a>
 		<a href="@{userSettings()}">Settings</a>
+		<a href="@{signOut()}">SignOut</a>
 	</div>
 	#{doLayout /}
 </body>
