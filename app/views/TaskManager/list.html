@@ -32,6 +32,8 @@
 #{if pageOnGoing > 0}
 <form style="display: inline" action="@{list()}" method="get">
 	<input type="hidden" name="pageOnGoing" value="${pageOnGoing-1}">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+	<input type="hidden" name="isOnAccomplished" value="${isOnAccomplished}">
 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 	前のページ</button>
 </form>
@@ -39,6 +41,8 @@
 #{if pageOnGoingIsLast == false}
 <form style="display: inline" action="@{list()}" method="get">
 	<input type="hidden" name="pageOnGoing" value="${pageOnGoing+1}">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+	<input type="hidden" name="isOnAccomplished" value="${isOnAccomplished}">
 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 	次のページ</button>
 </form>
@@ -80,6 +84,44 @@
 	#{/list}
 </table>
 <h3>完了済のタスク</h3>
+
+<p>
+#{if isOnAccomplished == false}
+<form action="@{list()}" method="get">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+	<input type="hidden" name="isOnAccomplished" value="true">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+	on</button>
+</form>
+#{/if}
+#{else}
+<form action="@{list()}" method="get">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished}">
+	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+	<input type="hidden" name="isOnAccomplished" value="false">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+	off</button>
+</form>
+#{/else}
+</p>
+
+#{if pageAccomplished > 0}
+<form style="display: inline" action="@{list()}" method="get">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished-1}">
+	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+	前のページ</button>
+</form>
+#{/if}
+#{if pageAccomplishedIsLast == false}
+<form style="display: inline" action="@{list()}" method="get">
+	<input type="hidden" name="pageOnGoing" value="${pageOnGoing}">
+	<input type="hidden" name="pageAccomplished" value="${pageAccomplished+1}">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+	次のページ</button>
+</form>
+#{/if}
 <table border="1">
 	#{list items: entries2, as: 'entry'}
 	<tr>

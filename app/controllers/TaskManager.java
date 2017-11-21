@@ -93,36 +93,53 @@ public class TaskManager extends Controller {
 		int pageOnGoing = 0;
 		int pageAccomplished = 0;
 		int numTaskAtOnce = 5;
-		if (params.get("pageOnGoing") != null){
-			pageOnGoing = Integer.parseInt(params.get("pageOnGoing"));
-			System.out.println("\n\n" + "PageOnGoing:" + pageOnGoing + "\n\n");
+		boolean isOnAccomplished = true;
+		if (params.get("isOnAccomplished") != null) {
+			isOnAccomplished = params.get("isOnAccomplished").equals("true");
+//			 System.out.println("\n\n" + isOnAccomplished + "\n\n");
 		}
-		if (params.get("pageAccomplished") != null){
-			pageAccomplished = Integer.parseInt(params.get("pageAccomplished"));
-		}
+
 		List<Task> tasksOnGoing = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), false).fetch();
-		List<Task> tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
 		// List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
+		if (params.get("pageOnGoing") != null) {
+			pageOnGoing = Integer.parseInt(params.get("pageOnGoing"));
+			// System.out.println("\n\n" + "PageOnGoing:" + pageOnGoing +
+			// "\n\n");
+		}
 		List<Task> entries1 = new ArrayList<Task>();
-		for (int i = pageOnGoing * numTaskAtOnce; i < (pageOnGoing + 1) * numTaskAtOnce && i < tasksOnGoing.size(); i++){
+		for (int i = pageOnGoing * numTaskAtOnce; i < (pageOnGoing + 1) * numTaskAtOnce
+				&& i < tasksOnGoing.size(); i++) {
 			entries1.add(tasksOnGoing.get(i));
-//			System.out.println("\n\n" + "AddPageOnGoing:" + i + "\n\n");
+			// System.out.println("\n\n" + "AddPageOnGoing:" + i + "\n\n");
 		}
+
+		List<Task> tasksAccomplished = new ArrayList<Task>();
 		List<Task> entries2 = new ArrayList<Task>();
-		for (int i = pageAccomplished * numTaskAtOnce; i < numTaskAtOnce && i < tasksAccomplished.size(); i++){
-			entries2.add(tasksAccomplished.get(i));
+		if (isOnAccomplished) {
+			tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
+			if (params.get("pageAccomplished") != null) {
+				pageAccomplished = Integer.parseInt(params.get("pageAccomplished"));
+			}
+			for (int i = pageAccomplished * numTaskAtOnce; i < (pageAccomplished + 1) * numTaskAtOnce
+					&& i < tasksAccomplished.size(); i++) {
+				entries2.add(tasksAccomplished.get(i));
+			}
 		}
+
 		renderArgs.put("entries", entries1);
 		renderArgs.put("entries2", entries2);
 		renderArgs.put("pageOnGoing", pageOnGoing);
 		renderArgs.put("pageAccomplished", pageAccomplished);
 		renderArgs.put("pageOnGoingIsLast", numTaskAtOnce * (pageOnGoing + 1) >= tasksOnGoing.size());
+		renderArgs.put("pageAccomplishedIsLast", numTaskAtOnce * (pageAccomplished + 1) >= tasksAccomplished.size());
+		renderArgs.put("isOnAccomplished", isOnAccomplished);
 		render();
 	}
 
 	public static void addTask() {
 		System.out.println("\n\n" + params.get("deadLine") + " is accomplished" + "\n\n");
-		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"), params.get("deadLine"));
+		Task task = new Task(session.get("user"), params.get("taskName"), params.get("comment"),
+				params.get("deadLine"));
 		task.save();
 		list();
 	}
