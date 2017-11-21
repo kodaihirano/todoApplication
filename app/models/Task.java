@@ -12,15 +12,15 @@ import play.db.jpa.Model;
 @Entity
 public class Task extends Model {
 	public String taskHolder;
-	public Long taskHolderId;
+	public String taskHolderId;
 	public String name;
 	public String comment;
 	public Date deadLine;
 	public boolean isEnd;
 	public Date createdDay;
 
-	public Task(String taskHolder, String name, String comment, String deadLine) {
-		this.taskHolder = taskHolder;
+	public Task(String taskHolderId, String name, String comment, String deadLine) {
+		this.taskHolderId = taskHolderId;
 		this.name = name;
 		this.comment = comment;
 		Calendar c = Calendar.getInstance();
@@ -50,6 +50,5 @@ public class Task extends Model {
 	public void toggleIsEnd() {
 		isEnd = !isEnd;
 //		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
-		this.save();
 	}
 }

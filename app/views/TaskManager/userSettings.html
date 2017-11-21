@@ -1,67 +1,14 @@
-<html>  
-<head>  
-	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">  
-	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>  
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
-</head>  
-<body>  
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">  
-		<header class="mdl-layout__header">  
-			<div class="mdl-layout__header-row">  
-				<!-- Title -->  
-				<span class="mdl-layout-title">ユーザー設定</span>  
-				<div class="mdl-layout-spacer"></div>  
-			</div>  
-		</header>  
-		<div class="mdl-layout__drawer">  
-			<span class="mdl-layout-title">メニュー</span>  
-			<nav class="mdl-navigation">  
-				<a class="mdl-navigation__link" href="@{list()}">HOME</a>  
-				<a class="mdl-navigation__link" href="changePassword">パスワード変更</a>  
-				<a class="mdl-navigation__link" href="">退会</a>  
-			</nav>  
-		</div>  
-		<main class="mdl-layout__content">  
-			<!--コンテンツ-->  
-			<div class="page-content">  
-				<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">  
+*{<meta charset="utf-8">}*
+#{extends 'TaskManager/main.html' /}
+<h2>ユーザー設定</h2>
 
-					<!--テキストボックス-->  
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">  
-						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="textbox1">  
-						<label class="mdl-textfield__label" for="textbox1" value="${usr.hight}">身長(cm)</label>  
-						<span class="mdl-textfield__error">半角数字で入力してね</span>  
-					</div>  
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">  
-						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="textbox2">  
-						<label class="mdl-textfield__label" for="textbox2">体重(kg)</label>  
-						<span class="mdl-textfield__error">半角数字で入力してね</span>  
-					</div>  
-					<!--ラジオボタン-->  
-					<div>  
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">  
-							<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>  
-							<span class="mdl-radio__label">男性</span>  
-						</label>  
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">  
-							<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">  
-							<span class="mdl-radio__label">女性</span>  
-						</label>  
-					</div>  
-					<!--ボタン-->  
-					<div class="mdl-card__actions">  
-						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">BMI計算</button>  
-					</div>  
-				</div>  
-				<!--計算結果-->  
-				<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">  
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">  
-						<input class="mdl-textfield__input" type="text" disabled>  
-						<label class="mdl-textfield__label" for="sample3">計算結果</label>  
-					</div>  
-				</div>  
-			</div>  
-		</main>  
-	</div>  
-</body>  
-</html>
+<p>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick="location.href='@{changePassword()}'">パスワード変更</button>
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="window.open('@{deleteUser()}')" style="margin-left: 16px">退会</button>
+</p>
+<style>
+p {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+</style>

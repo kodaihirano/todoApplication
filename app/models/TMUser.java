@@ -28,6 +28,21 @@ public class TMUser extends Model {
 		}
 		hight = 150;
 	}
+	public boolean checkPassword(String password){
+		byte[] hashedInput = null;
+		try {
+			Charset charset = StandardCharsets.UTF_8;
+			String algorithm = "MD5";
+			MessageDigest md = MessageDigest.getInstance(algorithm);
+			hashedInput = md.digest(password.getBytes(charset));
+		} catch (NoSuchAlgorithmException e) {
+		}
+		if (Arrays.equals(hashedInput, hashedPassword)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	public void changePassword(String password) {
 		try {
 			Charset charset = StandardCharsets.UTF_8;
