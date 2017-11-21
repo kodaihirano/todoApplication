@@ -11,8 +11,10 @@ import java.util.List;
 
 import models.TMUser;
 import models.Task;
-import play.mvc.Controller;
+import play.mvc.*;
+import play.modules.*;
 
+@With(Secure.class)
 public class TaskManager extends Controller {
 
 	public static void index() {
@@ -96,7 +98,11 @@ public class TaskManager extends Controller {
 		boolean isOnAccomplished = true;
 		if (params.get("isOnAccomplished") != null) {
 			isOnAccomplished = params.get("isOnAccomplished").equals("true");
-//			 System.out.println("\n\n" + isOnAccomplished + "\n\n");
+			// System.out.println("\n\n" + isOnAccomplished + "\n\n");
+		}
+		if (params.get("pageAccomplished") != null) {
+			pageAccomplished = Integer.parseInt(params.get("pageAccomplished"));
+			pageAccomplished = pageAccomplished < 0 ? 0 : pageAccomplished;
 		}
 
 		List<Task> tasksOnGoing = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), false).fetch();
@@ -105,6 +111,7 @@ public class TaskManager extends Controller {
 			pageOnGoing = Integer.parseInt(params.get("pageOnGoing"));
 			// System.out.println("\n\n" + "PageOnGoing:" + pageOnGoing +
 			// "\n\n");
+			pageOnGoing = pageOnGoing < 0 ? 0:pageOnGoing;
 		}
 		List<Task> entries1 = new ArrayList<Task>();
 		for (int i = pageOnGoing * numTaskAtOnce; i < (pageOnGoing + 1) * numTaskAtOnce
@@ -117,9 +124,6 @@ public class TaskManager extends Controller {
 		List<Task> entries2 = new ArrayList<Task>();
 		if (isOnAccomplished) {
 			tasksAccomplished = Task.find("taskHolder = ?1 and isEnd = ?2", session.get("user"), true).fetch();
-			if (params.get("pageAccomplished") != null) {
-				pageAccomplished = Integer.parseInt(params.get("pageAccomplished"));
-			}
 			for (int i = pageAccomplished * numTaskAtOnce; i < (pageAccomplished + 1) * numTaskAtOnce
 					&& i < tasksAccomplished.size(); i++) {
 				entries2.add(tasksAccomplished.get(i));
@@ -178,6 +182,46 @@ public class TaskManager extends Controller {
 		Task task = Task.findById(taskId);
 		task.delete();
 		list();
+	}
+	public static void userSettings() {
+		render();
+	}
+	public static void changePassword() {
+		render();
+	}
+	public static void postChangedPassword() {
+		List<TMUser> usersByName = TMUser.find("name = ?1", session.get("user")).fetch();
+		if (usersByName.size() == 1) {
+			TMUser usr = usersByName.get(0);
+			String oldPassword = params.get("oldPassword");
+			byte[] hashedInput = null;
+			try {
+				Charset charset = StandardCharsets.UTF_8;
+				String algorithm = "MD5";
+				MessageDigest md = MessageDigest.getInstance(algorithm);
+				hashedInput = md.digest(oldPassword.getBytes(charset));
+			} catch (NoSuchAlgorithmException e) {
+			}
+			// Logger.info("name:%s", params.get("name"));
+			// Logger.info("pass:%s", password);
+			// Logger.info("hash:%s", hashedInput.toString());
+			// Logger.info("hash:%s", usr.hashedPassword.toString());
+			if (Arrays.equals(hashedInput, usr.hashedPassword)) {
+				usr.changePassword(params.get("newPassword"));
+				usr.save();
+			} else {
+				validation.current().addError("field", "old password is not correct", "variables1", "variables2");
+				params.flash();
+				validation.keep();
+				signInForm();
+			}
+		} else {
+			validation.current().addError("field", "this account name does not exist", "variables1", "variables2");
+			params.flash();
+			validation.keep();
+			signInForm();
+		}
+		userSettings();
 	}
 
 	public static void login() {

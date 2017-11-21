@@ -7,8 +7,45 @@
   <script type="text/javascript" src="@{'/public/javascripts/exp4todo.js'}"></script>
   <title>exp4TM</title>
 </head>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script>
+	$(function() {
+		$('h1, h2, h3').click(function() {
+			$(this).addClass('animated bounceOutRight');
+		});
+		// $("h1").click(
+		// 		function() {
+		// 			$.get("https://api.coindesk.com/v1/bpi/currentprice.json",
+		// 					function(data) {
+		// 						var json = JSON.parse(data);
+		// 						var rate = json.bpi.USD.rate;
+		// 						$("body").append(rate);
+		// 					});
+		// 		});
+	});
+</script>
 <body>
 <h1>exp4TM</h1>
+
+<div class="topnav" id="myTopnav">
+  <a href="@{list()}">Home</a>
+  <a href="@{userSettings()}">Settings</a>
+</div>
 #{doLayout /}
 </body>
+<style>	
+body {
+	margin: 20px;
+}
+</style>
 </html>
