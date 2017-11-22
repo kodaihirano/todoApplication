@@ -32,20 +32,17 @@
 	#{/if}
 	#{list items: entries, as: 'entry'}
 	<tr>
-				<td width="100" style="position: relative;">
-			<div id="${entry.id}" ondblclick="kakunin(this)" style="position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  -webkit- transform: translateY(-50%);">${entry.name}</div>
-			<div style="display: none;position: absolute;top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  -webkit- transform: translateY(-50%);">
+		<td width="100" style="position: relative;">
+			<div ondblclick="kakunin(this)" style="position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
+				${entry.name}
+			</div>
+			<div style="display: none;position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
 				<!-- <form action="@{changeTaskName()}" method="post" > -->
-					<input id="${entry.id}" type="text" name="taskName" value="${entry.name}" style="width: 50px">
-					<input type="hidden" name="taskId" value="${entry.id}">
-					<button class = "changeTaskNameButton" onclick="clickedChangeButton(this)" id="${entry.id}">変更</button>
+				<input class = "changedTaskName" type="text" name="taskName" value="${entry.name}" style="width: 50px">
+				<input class = "changedTaskId" type="hidden" name="taskId" value="${entry.id}">
+				<button class = "changeTaskNameButton">
+					変更
+				</button>
 					<!-- <input type="submit" value="変更" style="display: inline;"> -->
 				<!-- </form> -->
 			</div>

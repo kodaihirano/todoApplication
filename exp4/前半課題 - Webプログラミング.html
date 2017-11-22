@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://www.se.cs.titech.ac.jp/lecture/exp4/first.html -->
+<html lang="ja-JP"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>前半課題 - Webプログラミング</title>
+  <meta name="author" content="Shinpei Hayashi">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="./前半課題 - Webプログラミング_files/bootstrap.min.css">
+  <link rel="stylesheet" href="./前半課題 - Webプログラミング_files/exp4.css">
+</head>
+<body>
+
+<div class="navbar  navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <!--button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button-->
+      <a class="navbar-brand" href="http://www.se.cs.titech.ac.jp/lecture/exp4/">exp4</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/">Home</a></li>
+        <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/#schedule">スケジュール</a></li>
+        <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/first.html">前半課題</a></li>
+        <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/second.html">後半課題</a></li>
+        <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/references.html">参考文献</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+<h1 id="前半課題">前半課題</h1>
+
+<p>「★」は選択（発展）課題である．</p>
+
+<h2 id="a-webとhttpの理解">A: WebとHTTPの理解</h2>
+
+<p>〆切：<strong>10/19(木) 18:00 JST</strong></p>
+
+<h3 id="基本課題">基本課題</h3>
+
+<p>以下の仕様を満たすアンケートフォームを <a href="http://www.se.cs.titech.ac.jp/lecture/exp4/A02-exp4server.zip">exp4server</a> 上に実現せよ．</p>
+
+<ol>
+  <li>初期画面：アンケートを開始するsubmitボタンを含む．submitボタンを押下すれば次画面へ遷移する．</li>
+  <li>性別をラジオボタンにより入力するフォームを含む画面．性別においては，「男」か「女」かを選択する．項目はこの順で出現するものとする．submitボタンを押下すれば次画面へ遷移する．</li>
+  <li>名前を入力するテキストフィールドを持つフォームを含む画面．submitボタンを押下すれば次画面へ遷移する．</li>
+  <li>感想を入力する複数行のテキストエリアを持つフォームを含む画面．submitボタンを押下すれば次画面へ遷移する．</li>
+  <li>これまでに入力した性別，名前，感想の各内容を表示する確認画面．submitボタンを押下すれば次画面へ遷移する．</li>
+  <li>アンケート回答完了の由を表示する画面．サーバは得られた3種類のデータを標準出力に出力する．</li>
+</ol>
+
+<p>アプリケーションを実現するための情報の保持・引き継ぎ方法として，以下の2方式を実装し，それぞれの利点・欠点について考察せよ．</p>
+
+<ul>
+  <li>[a1] 方式1：ステートレス方式．クライアントおよびサーバは状態を持たない．現在の遷移までの経緯に関する情報は，各通信で保持し続ける．
+    <ul>
+      <li>データの持ち回しには，input要素を用いる．</li>
+    </ul>
+  </li>
+  <li>[a2] 方式2：セッション方式．サーバはクライアントからの初期画面アクセスごとにセッションを構成する．サーバはセッションキーを発行し，以降のアクセスを送信されたセッションキーに基づいて弁別し，またサーバはキー毎に情報を保持する．
+    <ul>
+      <li>クライアントにおけるセッションキーの保持にはCookieを用いる．</li>
+    </ul>
+  </li>
+</ul>
+
+<p>[a3] なお，実装の際には，利用者の多様な入力を考慮すること．例えば，HTMLやx-www-form-urlencodedの解釈に影響を与えうる文字が入力されても題意を満足するようにすること．</p>
+
+<h3 id="発展課題">発展課題</h3>
+
+<ul>
+  <li>★[A1] 方式2においてセッションデータを永続化させ，サーバが再起動を伴ってもセッションが継続するようにせよ．</li>
+  <li>★[A2] 1, 2両方式の（いくつかの）利点を兼ね備えた新方式について考察し，実装せよ．</li>
+  <li>★[A3] Cookie非対応のユーザエージェントも存在する（例えば，古代i-mode紀におけるDocomo端末の一部）．こういった端末でセッションを維持・構築するための工夫を考え，可能なら実装せよ．</li>
+  <li>★[A4] 各方式において，アンケートフォームを，「性別→名前→感想」の順に限らず，順不同で入力が可能なよう修正せよ．</li>
+  <li>★[A5] 一般的なユーザエージェントは，<code class="highlighter-rouge">WWW-Authenticate</code>ヘッダ（例えば <code class="highlighter-rouge">WWW-Authenticate: Basic realm="Password required"</code>）を伴うステータスコード401のレスポンスメッセージに対してパスワード入力を促し，得られたパスワード等のデータを<code class="highlighter-rouge">Authorization</code>ヘッダに含め再びアクセスを試みる．アンケートフォームにHTTP認証を実装せよ．もっとも単純なBasic認証を選択してよい．この場合，Authorizationヘッダには，入力されたユーザ名とパスワードがコロン（<code class="highlighter-rouge">:</code>)で区切られた文字列をBase64エンコードしたものが送信される．必要に応じて，既存のBase64変換ライブラリを利用してよい．</li>
+  <li>★[A6] HTTP/1.1リクエストには，<code class="highlighter-rouge">Accept</code>や<code class="highlighter-rouge">Accept-Language</code>，<code class="highlighter-rouge">Accept-Encoding</code>など，ユーザエージェントが受容可能なデータ形式を（優先順位付きで）指定するヘッダがある．適切なものを選択し，ユーザエージェントの受容に応じて異なるデータを出力するコンテントネゴシエーション機構を実装せよ．</li>
+  <li>★[A7] 配布しているソースコードは大量の<code class="highlighter-rouge">send(...)</code>や<code class="highlighter-rouge">sendln(...)</code>の呼び出しを含んでおり，これらが保守性を低下させている．入力データの処理などのアプリケーションロジックとブラウザに表示されるHTMLのビジュアルデザインを異なる開発者が行うことを想定し，保守性や開発効率を向上させる機構を設計し実装せよ．</li>
+</ul>
+
+<h3 id="レポート執筆に関して">レポート執筆に関して</h3>
+
+<p>レポート冒頭で，上記課題のうち報告対象がどれかを項目記号（[a数字]あるいは[A数字]の形式で示されている）の一覧として宣言すること．
+例えば，基本課題のみをすべて実装した場合，レポート冒頭には「a1, a2, a3」が記される．</p>
+
+<h3 id="実験資料">実験資料</h3>
+
+<ul>
+  <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/A01-webhttp.pdf">実験資料A01（実験書）</a></li>
+  <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/A02-exp4server.zip">実験資料A02（実験キット）</a></li>
+</ul>
+
+<h2 id="b-javaを用いたwebアプリケーションの開発">B: Javaを用いたWebアプリケーションの開発</h2>
+
+<p>〆切：<strong>11/30(木) 18:00 JST</strong></p>
+
+<h3 id="1-以下の仕様を満たすタスク管理webアプリケーションをjavaを用いて開発せよ">1. 以下の仕様を満たすタスク管理WebアプリケーションをJavaを用いて開発せよ．</h3>
+
+<ul>
+  <li>データは関係データベースに格納する．</li>
+  <li>アプリケーションに必要とされる機能には，トップページ（http://localhost:9001/ からアクセスするものとする）からリンクによりたどり着くことができる．</li>
+  <li>ログイン機構を持つ．
+    <ul>
+      <li>[B1] ユーザは初回利用時に登録作業（サインアップ）を行い，アカウント名とパスワードをシステムに登録する．</li>
+      <li>[B2] サインアップ以降の利用ではこれらの情報を入力することによりログイン（サインイン）する．</li>
+      <li>ユーザは初回利用時に登録作業（サインアップ）を行い，アカウント名とパスワードをシステムに登録する．以降の利用ではこれらの情報を入力することによりログイン（サインイン）する．</li>
+      <li>異なるユーザが同一のアカウント名を利用できてはならない．</li>
+    </ul>
+  </li>
+  <li>[B3] 利用者のパスワードはそのままデータベースに登録してはならず，不可逆にダイジェスト化しなければならない．</li>
+  <li>[B4] ユーザは「タスク」を作成できる．
+    <ul>
+      <li>タスクは少なくとも，その名前（タイトル），作成日時，完了しているかどうかの状態を持つ．</li>
+      <li>（発展課題E7の実装なくして）特定のユーザが作成したタスクは他のユーザが閲覧・削除・編集・完了できないようにする．</li>
+    </ul>
+  </li>
+  <li>[B5] ユーザは「タスク」を削除できる．</li>
+  <li>[B6] ユーザは「タスク」を編集できる．</li>
+  <li>[B7] ユーザは「タスク」を完了できる．</li>
+  <li>[B8] ユーザはタスクの一覧を取得・閲覧できる．
+    <ul>
+      <li>[B9] 完了されていないタスクのみをデータベースから読み込んで閲覧することもできる．</li>
+      <li>[B10] タスクの数が増えた際に，データベースからすべてのタスクを読み込み一画面で閲覧するのではなく，その一部のみを読み込んで，閲覧する仕組みを持つ．例えば，50件のタスクが登録されていた場合，10件ずつに区切り，5ページに分けて閲覧できる仕組みがこれにあたる．</li>
+    </ul>
+  </li>
+  <li>★[E1] ユーザが自身のパスワードを変更できる．</li>
+  <li>★[E2] ユーザは退会（自身を削除）できる．</li>
+  <li>★[E3] タスクに「優先度」「〆切」等の属性を持たせ，高優先度や〆切間近のタスクを強調表示したり，選択して表示できる．</li>
+  <li>★[E4] タスクに「タグ」や「カテゴリ」，「グループ」のような，複数の観点からタスク群を分類可能な情報を付与し，実際に分類を行うことを可能とする．</li>
+  <li>★[E5] タスクが親子関係（タスクとサブタスクの関係）を持つことができる．この場合，タスクは木構造を成す．</li>
+  <li>★[E6] 「定期的タスク（毎週月曜日など）」を取り扱うことができる．</li>
+  <li>★[E7] タスク（群）を複数のアカウントで共有したり一般公開したりできる．</li>
+  <li>★[E8] その他の機能．必要に応じて既存のタスク管理アプリケーションを試用し, 興味深い機能を発見してみるとよい．</li>
+</ul>
+
+<h3 id="2-作成したアプリケーションに以下の拡張を与えユーザビリティを向上させよ">2. 作成したアプリケーションに以下の拡張を与え，ユーザビリティを向上させよ．</h3>
+
+<ul>
+  <li>[B11] 画面遷移を行うことなくタスクを完了できる．</li>
+  <li>★[E9] 画面遷移を行うことなく，タスクの名前変更が行える．</li>
+  <li>★[E10] 画面遷移を行うことなく，タスクの追加が行える．</li>
+  <li>★[E11] 画面遷移を行うことなく，タスクの削除が行える．</li>
+  <li>★[E12] サインアップ画面において，入力したアカウント名がすでに使われているかどうかが即座にわかる機構を持つ．</li>
+  <li>★[E13] CSRF（Cross-site request forgeries）について調べ，作成したアプリケーションの安全性について検討せよ．</li>
+  <li>★[E14] その他の面白いと思った機能．</li>
+</ul>
+
+<h3 id="レポート執筆に関して-1">レポート執筆に関して</h3>
+
+<p>レポート冒頭で，上記課題のうち報告対象がどれかを項目記号（[B数字]あるいは[E数字]の形式で示されている）の一覧として宣言すること．
+例えば，基本課題のみをすべて実装した場合，レポート冒頭には「B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, B11」が記される．</p>
+
+<h3 id="実験資料-1">実験資料</h3>
+
+<ul>
+  <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/B01-play.pdf">実験資料B01（実験書）</a></li>
+  <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/B02-exp4todo.zip">実験資料B02（実験キット）</a></li>
+  <li><a href="http://www.se.cs.titech.ac.jp/lecture/exp4/B03-async.pdf">実験資料B03（非同期通信）</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+</body></html>

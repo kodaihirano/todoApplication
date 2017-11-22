@@ -17,10 +17,10 @@ function xhrsample() {
             alert("失敗しました．");
             return;
         }
-        
+
         // body にはサーバから返却された文字列が格納される．
         var body = req.responseText;
-        // デバッグ表示 
+        // デバッグ表示
         alert('body: ' + body);
 
         // 戻ってきた JSON 文字列を JavaScript オブジェクトに変換
@@ -33,10 +33,10 @@ function xhrsample() {
         // サーバから戻ってきた値で書き換える．
         document.getElementById("f").value = data.result;
     }
-    
+
     // Content-Type の指定
     req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    // <input id="f"> に入力された文字列をエンコードして送信        
+    // <input id="f"> に入力された文字列をエンコードして送信
     req.send("p=" + enc(document.getElementById("f").value));
 }
 

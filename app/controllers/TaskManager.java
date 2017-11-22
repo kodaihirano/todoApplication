@@ -2,7 +2,9 @@ package controllers;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import models.TMUser;
 import models.Task;
@@ -138,7 +140,7 @@ public class TaskManager extends Controller {
 
 	public static void addTask() {
 		checkSignedIn();
-		System.out.println("\n\n" + params.get("deadLine") + " is accomplished" + "\n\n");
+//		System.out.println("\n\n" + params.get("deadLine") + " is accomplished" + "\n\n");
 		Task task = new Task(session.get("userId"), params.get("taskName"), params.get("comment"),
 				params.get("deadLine"));
 		task.save();
@@ -175,11 +177,20 @@ public class TaskManager extends Controller {
 		task.save();
 		list();
 	}
-	public static String changeAjax(String taskName,String taskId) {
+	public static void changeAjax() {
+        System.out.println(params.all().keySet() + "\n\n");
+
+		String taskName = params.get("taskName");
+		String taskId = params.get("taskId");
+
 		Task task = Task.findById(Long.parseLong(taskId));
 		task.changeName(taskName);
 		task.save();
-		return taskName;
+
+		Map<String, Object> map = new HashMap<>();
+		map.put("status", "OK");
+		map.put("taskName", taskName);
+		renderJSON(map);
 	}
 
 	public static void postEditedTask() {

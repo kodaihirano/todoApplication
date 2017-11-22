@@ -1,0 +1,20 @@
+body {
+  padding-top: 50px;
+}
+
+.section {
+    padding-top: 1em;
+}
+
+tr.off {
+  color: #aaa;
+}
+
+em,
+strong {
+    font-weight: bold;
+    font-style: normal;
+}
+strong {
+    color: red;
+}
