@@ -1,20 +1,12 @@
 package controllers;
 
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.Security;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import models.TMUser;
 import models.Task;
-import play.mvc.*;
-import play.modules.*;
-import play.mvc.results.*;
+import play.mvc.Controller;
 
 public class TaskManager extends Controller {
 
@@ -35,6 +27,12 @@ public class TaskManager extends Controller {
 			index();
 		}
 		// System.out.println("\n\n" + session.get("user") + "\n\n");
+	}
+	private static Long getTaskId() {
+		return Long.parseLong(params.get("taskId"));
+	}
+	private static Long getUserId() {
+		return Long.parseLong(session.get("userId"));
 	}
 
 	public static void signIn() {
@@ -83,8 +81,8 @@ public class TaskManager extends Controller {
 			validation.keep(); // keep the errors for the next request
 			signUpForm();
 		}
-		session.put("name", params.get("name"));
-		session.put("password", params.get("password"));
+		renderArgs.put("name", params.get("name"));
+		renderArgs.put("password", params.get("password"));
 		render();
 	}
 
@@ -149,9 +147,8 @@ public class TaskManager extends Controller {
 
 	public static void toggleIsEnd() {
 		checkSignedIn();
-		Long taskId = Long.parseLong(params.get("taskId"));
 		// System.out.println("\n\n" + taskId + " is accomplished" + "\n\n");
-		Task task = Task.findById(taskId);
+		Task task = Task.findById(getTaskId());
 		task.toggleIsEnd();
 		task.save();
 		list();
@@ -159,7 +156,7 @@ public class TaskManager extends Controller {
 
 	public static void editTask() {
 		checkSignedIn();
-		Long taskId = Long.parseLong(params.get("taskId"));
+		Long taskId = getTaskId();
 		Task task = Task.findById(taskId);
 		renderArgs.put("taskId", taskId);
 		renderArgs.put("taskName", task.name);
@@ -173,28 +170,35 @@ public class TaskManager extends Controller {
 	}
 	public static void changeTaskName() {
 		checkSignedIn();
+		Task task = Task.findById(getTaskId());
+		task.changeName(params.get("taskName"));
+		task.save();
 		list();
+	}
+	public static String changeAjax(String taskName,String taskId) {
+		Task task = Task.findById(Long.parseLong(taskId));
+		task.changeName(taskName);
+		task.save();
+		return taskName;
 	}
 
 	public static void postEditedTask() {
 		checkSignedIn();
-		Long taskId = Long.parseLong(params.get("taskId"));
-		Task task = Task.findById(taskId);
+		Task task = Task.findById(getTaskId());
 		task.editTask(params.get("taskName"), params.get("comment"), params.get("deadLine"));
 		list();
 	}
 
 	public static void deleteTask() {
 		checkSignedIn();
-		Long taskId = Long.parseLong(params.get("taskId"));
-		Task task = Task.findById(taskId);
+		Task task = Task.findById(getTaskId());
 		task.delete();
 		list();
 	}
 
 	public static void userSettings() {
 		checkSignedIn();
-		renderArgs.put("user", TMUser.findById(Long.parseLong(session.get("userId"))));
+		renderArgs.put("user", TMUser.findById(getUserId()));
 		render();
 	}
 
@@ -205,7 +209,7 @@ public class TaskManager extends Controller {
 
 	public static void deleteUser() {
 		checkSignedIn();
-		TMUser usr = TMUser.findById(Long.parseLong(session.get("userId")));
+		TMUser usr = TMUser.findById(getUserId());
 		usr.delete();
 		List<Task> tasks = Task.find("taskHolderId = ?1", session.get("userId")).fetch();
 		tasks.forEach(e->e.delete());
@@ -219,7 +223,7 @@ public class TaskManager extends Controller {
 
 	public static void postChangedPassword() {
 		checkSignedIn();
-		TMUser usr = TMUser.findById(Long.parseLong(session.get("userId")));
+		TMUser usr = TMUser.findById(getUserId());
 		String oldPassword = params.get("oldPassword");
 		boolean isCorrectPass = usr.checkPassword(oldPassword);
 		if (isCorrectPass) {
@@ -233,5 +237,6 @@ public class TaskManager extends Controller {
 		}
 		userSettings();
 	}
+
 
 }

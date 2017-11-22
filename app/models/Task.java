@@ -2,8 +2,8 @@ package models;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Entity;
 
@@ -50,5 +50,8 @@ public class Task extends Model {
 	public void toggleIsEnd() {
 		isEnd = !isEnd;
 //		System.out.println("\n\n" + name + " is "+ isEnd + "\n\n");
+	}
+	public void changeName(String taskName) {
+		this.name = taskName;
 	}
 }

@@ -34,10 +34,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		// 		});
 	});
 	function kakunin(obj){
-		$(obj).addClass('animated bounceOutRight');
+		// $(obj).addClass('animated bounceOutRight');
+		obj.style.display = 'none'
 		var form = obj.parentNode.children[1];
 		form.style.display = 'inline';
-		$(form).addClass('animated bounceInLeft');
+		// $(form).addClass('animated bounceInLeft');
+	};
+	function clickedChangeButton(obj){
+		var id = obj.id;
+		var listAction = #{jsAction @changeAjax(':task1', ':task2') /}
+	    $('document').load(
+	       listAction({task1: 'あほ', task2: id}), 
+	       function(data) {
+	           $("div#${id}").text(data)
+	       }
+	   )
+
 	}
 
 </script>
