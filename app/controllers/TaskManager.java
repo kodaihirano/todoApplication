@@ -30,9 +30,11 @@ public class TaskManager extends Controller {
 		}
 		// System.out.println("\n\n" + session.get("user") + "\n\n");
 	}
+
 	private static Long getTaskId() {
 		return Long.parseLong(params.get("taskId"));
 	}
+
 	private static Long getUserId() {
 		return Long.parseLong(session.get("userId"));
 	}
@@ -103,7 +105,8 @@ public class TaskManager extends Controller {
 			pageAccomplished = pageAccomplished < 0 ? 0 : pageAccomplished;
 		}
 
-		List<Task> tasksOnGoing = Task.find("taskHolderId = ?1 and isEnd = ?2", session.get("userId"), false).fetch();
+		Long userId = Long.parseLong(session.get("userId"));
+		List<Task> tasksOnGoing = Task.find("taskHolderId = ?1 and isEnd = ?2", userId, false).fetch();
 		// List<Task> tasks = Task.find("isEnd = ?1", false).fetch();
 		if (params.get("pageOnGoing") != null) {
 			pageOnGoing = Integer.parseInt(params.get("pageOnGoing"));
@@ -114,17 +117,23 @@ public class TaskManager extends Controller {
 		List<Task> entries1 = new ArrayList<Task>();
 		for (int i = pageOnGoing * numTaskAtOnce; i < (pageOnGoing + 1) * numTaskAtOnce
 				&& i < tasksOnGoing.size(); i++) {
-			entries1.add(tasksOnGoing.get(i));
+			Task addingTask = tasksOnGoing.get(i);
+			if (addingTask.haveAuthority(userId)) {
+				entries1.add(addingTask);
+			}
 			// System.out.println("\n\n" + "AddPageOnGoing:" + i + "\n\n");
 		}
 
 		List<Task> tasksAccomplished = new ArrayList<Task>();
 		List<Task> entries2 = new ArrayList<Task>();
 		if (isOnAccomplished) {
-			tasksAccomplished = Task.find("taskHolderId = ?1 and isEnd = ?2", session.get("userId"), true).fetch();
+			tasksAccomplished = Task.find("taskHolderId = ?1 and isEnd = ?2", userId, true).fetch();
 			for (int i = pageAccomplished * numTaskAtOnce; i < (pageAccomplished + 1) * numTaskAtOnce
 					&& i < tasksAccomplished.size(); i++) {
-				entries2.add(tasksAccomplished.get(i));
+				Task addingTask = tasksAccomplished.get(i);
+				if (addingTask.haveAuthority(userId)) {
+					entries2.add(addingTask);
+				}
 			}
 		}
 
@@ -140,8 +149,9 @@ public class TaskManager extends Controller {
 
 	public static void addTask() {
 		checkSignedIn();
-//		System.out.println("\n\n" + params.get("deadLine") + " is accomplished" + "\n\n");
-		Task task = new Task(session.get("userId"), params.get("taskName"), params.get("comment"),
+		// System.out.println("\n\n" + params.get("deadLine") + " is
+		// accomplished" + "\n\n");
+		Task task = new Task(Long.parseLong(session.get("userId")), params.get("taskName"), params.get("comment"),
 				params.get("deadLine"));
 		task.save();
 		list();
@@ -170,6 +180,7 @@ public class TaskManager extends Controller {
 		}
 		render();
 	}
+
 	public static void changeTaskName() {
 		checkSignedIn();
 		Task task = Task.findById(getTaskId());
@@ -177,8 +188,9 @@ public class TaskManager extends Controller {
 		task.save();
 		list();
 	}
-	public static void changeAjax() {
-        System.out.println(params.all().keySet() + "\n\n");
+
+	public static void changeTaskNameAjax() {
+		// System.out.println(params.all().keySet() + "\n\n");
 
 		String taskName = params.get("taskName");
 		String taskId = params.get("taskId");
@@ -193,17 +205,35 @@ public class TaskManager extends Controller {
 		renderJSON(map);
 	}
 
+	public static void toggleIsEndAjax() {
+		// System.out.println("clicked\n\n");
+		String taskId = params.get("taskId");
+		Task task = Task.findById(Long.parseLong(taskId));
+		if (task.haveAuthority(Long.parseLong(session.get("userId")))) {
+			task.toggleIsEnd();
+			task.save();
+		}
+		Map<String, Object> map = new HashMap<>();
+		map.put("status", "OK");
+		renderJSON(map);
+	}
+
 	public static void postEditedTask() {
 		checkSignedIn();
 		Task task = Task.findById(getTaskId());
-		task.editTask(params.get("taskName"), params.get("comment"), params.get("deadLine"));
+		if (task.haveAuthority(Long.parseLong(session.get("userId")))) {
+			task.editTask(params.get("taskName"), params.get("comment"), params.get("deadLine"));
+	        task.save();
+		}
 		list();
 	}
 
 	public static void deleteTask() {
 		checkSignedIn();
 		Task task = Task.findById(getTaskId());
-		task.delete();
+		if (task.haveAuthority(Long.parseLong(session.get("userId")))) {
+			task.delete();
+		}
 		list();
 	}
 
@@ -223,10 +253,11 @@ public class TaskManager extends Controller {
 		TMUser usr = TMUser.findById(getUserId());
 		usr.delete();
 		List<Task> tasks = Task.find("taskHolderId = ?1", session.get("userId")).fetch();
-		tasks.forEach(e->e.delete());
+		tasks.forEach(e -> e.delete());
 		session.remove("userId");
 		index();
 	}
+
 	public static void signOut() {
 		session.remove("userId");
 		index();
@@ -248,6 +279,5 @@ public class TaskManager extends Controller {
 		}
 		userSettings();
 	}
-
 
 }

@@ -33,10 +33,10 @@
 	#{list items: entries, as: 'entry'}
 	<tr>
 		<td width="100" style="position: relative;">
-			<div ondblclick="kakunin(this)" style="position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
+			<div class = "TaskNameLabel" style="position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
 				${entry.name}
 			</div>
-			<div style="display: none;position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
+			<div class = "changeTaskNameForm" style="display: none;position: absolute;top: 50%;left: 5px;transform: translateY(-50%);-webkit- transform: translateY(-50%);">
 				<!-- <form action="@{changeTaskName()}" method="post" > -->
 				<input class = "changedTaskName" type="text" name="taskName" value="${entry.name}" style="width: 50px">
 				<input class = "changedTaskId" type="hidden" name="taskId" value="${entry.id}">
@@ -54,13 +54,10 @@
 		entry.createdDay.format('yyyy/MM/dd')}</td>
 		<!-- <td width="50">${entry.isEnd}</td> -->
 		<td width="70">
-			<form action="@{toggleIsEnd()}" method="post">
-				<p>
-					<input type="hidden" name="taskId" value="${entry.id}" />
-					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-					完了</button>
-				</p>
-			</form>
+			<input class = "accomplishedTaskId" type="hidden" name="taskId" value="${entry.id}" />
+			<button class = "accomplishedButton">
+			完了
+			</button>
 		</td>
 		<td>
 			<form action="@{deleteTask()}" method="post">
@@ -132,7 +129,7 @@
 	#{list items: entries2, as: 'entry'}
 	<tr>
 		<td width="100" style="position: relative;">
-			<div ondblclick="kakunin(this)" style="position: absolute;
+			<div ondblclick="changeTaskNameFormActivate(this)" style="position: absolute;
   top: 50%;
   left: 5px;
   transform: translateY(-50%);
