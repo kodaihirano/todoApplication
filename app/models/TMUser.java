@@ -1,20 +1,19 @@
 package models;
 
-import play.*;
-import play.db.jpa.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
-import javax.persistence.*;
-import java.util.*;
-import java.nio.charset.*;
-import java.security.*;
-import java.math.*;
+import javax.persistence.Entity;
 
-import javax.xml.bind.*;
+import play.db.jpa.Model;
 
 @Entity
 public class TMUser extends Model {
 	public String name;
-	public int hight;
+//	public int hight;
 	public byte[] hashedPassword;
 
 	public TMUser(String name, String password) {
@@ -26,7 +25,7 @@ public class TMUser extends Model {
 			hashedPassword = md.digest(password.getBytes(charset));
 		} catch (NoSuchAlgorithmException e) {
 		}
-		hight = 150;
+//		hight = 150;
 	}
 	public boolean checkPassword(String password){
 		byte[] hashedInput = null;
