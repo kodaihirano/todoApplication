@@ -49,13 +49,13 @@ public class TaskManager extends Controller {
 				session.put("userId", usr.id);
 				list();
 			} else {
-				validation.current().addError("field", "password is not correct", "variables1", "variables2");
+				validation.current().addError("field", "password is not correct");
 				params.flash();
 				validation.keep();
 				signInForm();
 			}
 		} else {
-			validation.current().addError("field", "this account name does not exist", "variables1", "variables2");
+			validation.current().addError("field", "this account name does not exist");
 			params.flash();
 			validation.keep();
 			signInForm();
@@ -77,8 +77,7 @@ public class TaskManager extends Controller {
 		validation.required("name", params.get("name"));
 		validation.required("password", params.get("password"));
 		if (!TMUser.find("name = ?1", params.get("name")).fetch().isEmpty()) {
-			validation.current().addError("field", "this account name is already being used", "variables1",
-					"variables2");
+			validation.current().addError("field", "this account name is already being used");
 		}
 		if (validation.hasErrors()) {
 			params.flash(); // add http parameters to the flash scope

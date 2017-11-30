@@ -11,7 +11,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Task extends Model {
-	public String taskHolder;
+//	public String taskHolder;
 	public Long taskHolderId;
 	public String name;
 	public String comment;
