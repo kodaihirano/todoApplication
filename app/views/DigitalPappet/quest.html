@@ -1,0 +1,44 @@
+*{<meta charset="utf-8">}*
+#{extends 'DigitalPappet/main.html' /}
+
+<h2>クエスト</h2>
+<table border="1">
+	#{if board}
+		#{list items: board, as: 'row'}
+			<tr height="50">
+			#{list items: row,as: 'cell'}
+				#{if cell == 1}
+					<td class="Pappet" width="50">${cell}</td>
+				#{/if}
+				#{else}
+					<td width="50">${cell}</td>
+				#{/else}
+			#{/list}
+			</tr>
+		#{/list}
+	#{/if}
+</table>
+<h3>コマンド</h3>
+<table border="1">
+	<tr>
+		<td width="50">main</td>
+		<td width="300">
+			<div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td width="50">set1</td>
+		<td width="300">
+			<div>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td width="50">set2</td>
+		<td width="300">
+			<div>
+			</div>
+		</td>
+	</tr>
+</table>

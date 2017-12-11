@@ -1,0 +1,30 @@
+*{<meta charset="utf-8">}*
+#{extends 'DigitalPappet/main.html' /}
+
+<h2>enchantjsTest</h2>
+<a href="@{enchantjsTest()}">Start</a>
+
+<h2>クエスト一覧</h2>
+<table border="1">
+	#{if quests}
+		<tr>
+			<td width="100">番号</td>
+			<td width="100">isClear</td>
+			<td width="100">start</td>
+		</tr>
+		#{list items: quests, as: 'quest'}
+			<tr>
+				<td width="100">${quest.id}</td>
+				<td width="100">${quest.isCleared()}</td>
+				<td width="100">
+					<form action="@{quest()}" method="post">
+						<input type="hidden" name="questId" value="${quest.id}" />
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+						start
+						</button>
+					</form>
+				</td>
+			</tr>
+		#{/list}
+	#{/if}
+</table>

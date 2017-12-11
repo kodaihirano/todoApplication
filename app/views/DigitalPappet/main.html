@@ -1,0 +1,44 @@
+*{<meta charset="utf-8">}*
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja-JP" xml:lang="ja-JP">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/exp4todo.css'}">
+	<script type="text/javascript" src="@{'/public/javascripts/exp4todo.js'}"></script>
+	<title>exp4TM</title>
+</head>
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script type="text/javascript" src="@{'/public/javascripts/taskManager.js'}"></script>
+<body>
+	<h1>exp4TM</h1>
+
+	<div class="topnav" id="myTopnav">
+		<a href="@{index()}">Home</a>
+	</div>
+	#{doLayout /}
+</body>
+<style>
+h1 {
+	font-size: 48px;
+}
+h2 {
+	font-size: 30px;
+}
+h3 {
+	font-size: 24px;
+}
+body {
+	margin: 20px;
+}
+</style>
+</html>
