@@ -1,13 +1,6 @@
 package controllers;
 
-import play.*;
-
-import play.mvc.*;
-
-import java.util.*;
-
-import models.*;
-import controllers.*;
+import play.mvc.Controller;
 
 public class Application extends Controller {
 
@@ -21,5 +14,9 @@ public class Application extends Controller {
 
 	public static void RedirectTM() {
 		controllers.TaskManager.index();
+	}
+
+	public static void redirectDP() {
+		controllers.DigitalPappet.index();
 	}
 }
