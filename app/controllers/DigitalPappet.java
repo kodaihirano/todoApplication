@@ -57,4 +57,7 @@ public class DigitalPappet extends Controller {
 	public static void enchantjsTest(){
 		render();
 	}
+	public static void enchantjsRPGexample(){
+		render();
+	}
 }
