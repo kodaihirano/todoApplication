@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>Battle - すすきすきすき - exp4 Redmine</title>
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="If7B0fQvFAVHkpQVWuZVtqI8vb84b3TwnY/plzv13vY=" name="csrf-token">
+<link rel="shortcut icon" href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/favicon.ico?1449305242">
+<link href="./Battle - すすきすきすき - exp4 Redmine_files/jquery-ui-1.11.0.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Battle - すすきすきすき - exp4 Redmine_files/application.css" media="all" rel="stylesheet" type="text/css">
+
+<script src="./Battle - すすきすきすき - exp4 Redmine_files/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js" type="text/javascript"></script>
+<script src="./Battle - すすきすきすき - exp4 Redmine_files/application.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('このページから移動すると、保存されていないデータが失われます。'); });
+//]]>
+</script>
+
+
+<!-- page specific tags -->
+  <script src="./Battle - すすきすきすき - exp4 Redmine_files/attachments.js" type="text/javascript"></script>
+</head>
+<body class="project-ssk48 controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/my/account" class="my-account">個人設定</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/logout" class="logout" data-method="post" rel="nofollow">ログアウト</a></li></ul>    </div>
+    <div id="loggedas">ログイン中： <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/users/57" class="user active">hirano.k.ah</a></div>
+    <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/" class="home">ホーム</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/my/page" class="my-page">マイページ</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects" class="projects">プロジェクト</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">ヘルプ</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+        <input name="wiki_pages" type="hidden" value="1">
+        <label for="q">
+          <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/search" accesskey="4">検索</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+</form>        <select id="project_quick_jump_box" name="project_quick_jump_box" onchange="if (this.value != &#39;&#39;) { window.location = this.value; }"><option value="">プロジェクトへ移動...</option><option value="" disabled="disabled">---</option><option value="/lecture/exp4/redmine/projects/untweetable?jump=wiki">Untweetable</option><option selected="selected" value="/lecture/exp4/redmine/projects/ssk48?jump=wiki">すすきすきすき</option></select>
+    </div>
+
+    <h1>すすきすきすき</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48" class="overview">概要</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/activity" class="activity">活動</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues" class="issues">チケット</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/new" accesskey="7" class="new-issue">新しいチケット</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/gantt" class="gantt">ガントチャート</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/calendar" class="calendar">カレンダー</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki" class="wiki selected">Wiki</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/files" class="files">ファイル</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/repository" class="repository">リポジトリ</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/settings" class="settings">設定</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          
+<h3>Wiki</h3>
+<ul>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki">メインページ</a></li>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/index">索引(名前順)</a></li>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/date_index">索引(日付順)</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit" accesskey="e" class="icon icon-edit">編集</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/watchers/watch?object_id=28&amp;object_type=wiki_page" class="wiki_page-28-watcher icon icon-fav-off" data-method="post" data-remote="true" rel="nofollow">ウォッチ</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/protect?protected=1" class="icon icon-lock" data-method="post" rel="nofollow">ロック</a>
+  
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/rename" class="icon icon-move">名前変更</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle" class="icon icon-del" data-confirm="よろしいですか？" data-method="delete" rel="nofollow">削除</a>
+<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/history" class="icon icon-history">履歴</a>
+</div>
+
+
+
+
+<div class="wiki wiki-page">
+  <a name="戦闘システムおよびガンビットに関するメモ"></a>
+<h1>戦闘システムおよびガンビットに関するメモ<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#戦闘システムおよびガンビットに関するメモ" class="wiki-anchor">¶</a></h1>
+
+<hr>
+
+<div class="contextual" id="section-2" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=2"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="お知らせ"></a>
+<h2>お知らせ<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#お知らせ" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>現在までの進捗。一応形にはなったので。→<a class="external" href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/attachments/download/97/battle.mp4">戦闘シーンサンプル</a></li>
+<li><del>BGM(3.1M)をgit pushできないため、現状はエラーがでる。ファイルサイズが問題なのかな。誰か解決方法知りませんか...。</del> →解決済み</li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-3" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=3"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="BattleUnitクラス"></a>
+<h2>BattleUnitクラス<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#BattleUnitクラス" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>enchant.Sprite ← Unit ← BattleUnit という継承関係。</li>
+<li>Unitクラスでは、スプライトに関する初期設定を行う。</li>
+<li>BattleUnitクラスではステータスに関する初期設定を行う。</li>
+<li>引数に次のようなJSON(もどき)を受け取り、インスタンスを生成する。</li>
+<li>プロパティは今後増えるかも。</li>
+</ul>
+<pre><code class="js syntaxhl"><span class="CodeRay">{
+  <span class="key"><span class="delimiter">"</span><span class="content">spriteConf</span><span class="delimiter">"</span></span>: {
+    <span class="key"><span class="delimiter">"</span><span class="content">sizeX</span><span class="delimiter">"</span></span>: <span class="integer">32</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">sizeY</span><span class="delimiter">"</span></span>: <span class="integer">32</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">frame</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">scaleX</span><span class="delimiter">"</span></span>: <span class="integer">1</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">scaleY</span><span class="delimiter">"</span></span>: <span class="integer">1</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">imagePath</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">/public/images/sampleRPG/chara0.gif</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">sx</span><span class="delimiter">"</span></span>: <span class="integer">192</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">sy</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">sw</span><span class="delimiter">"</span></span>: <span class="integer">96</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">sh</span><span class="delimiter">"</span></span>: <span class="integer">128</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">dx</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">dy</span><span class="delimiter">"</span></span>: <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">dw</span><span class="delimiter">"</span></span>: <span class="integer">96</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">dh</span><span class="delimiter">"</span></span>: <span class="integer">128</span>
+  },
+  <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>:   <span class="string"><span class="delimiter">"</span><span class="content">unitA</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">hp</span><span class="delimiter">"</span></span>:     <span class="integer">30</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">hpMax</span><span class="delimiter">"</span></span>:  <span class="integer">30</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">en</span><span class="delimiter">"</span></span>:     <span class="integer">15</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">enMax</span><span class="delimiter">"</span></span>:  <span class="integer">15</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">atk</span><span class="delimiter">"</span></span>:    <span class="integer">10</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">def</span><span class="delimiter">"</span></span>:    <span class="integer">5</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">spd</span><span class="delimiter">"</span></span>:    <span class="integer">5</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">actionSelection</span><span class="delimiter">"</span></span>: <span class="keyword">function</span>() {...},
+  <span class="key"><span class="delimiter">"</span><span class="content">skills</span><span class="delimiter">"</span></span>: {<span class="key"><span class="delimiter">"</span><span class="content">attack</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">スキルのJSONへのパス</span><span class="delimiter">"</span></span>, ...}
+}
+</span></code></pre>
+<ul>
+<li>画像やJSONはpreload()しておく。</li>
+<li>actionSelectionには、ガンビットで設定した行動決定に関する情報を格納する。</li>
+<li>ガンビットでどの程度のことができるかわからないので、担当と相談したい。</li>
+<li>skillsには習得しているスキルの名前を文字列で格納する。</li>
+<li>スキルオブジェクトは事前にグローバルに宣言しておき、インスタンス生成時にeval()を用いてスキルへの参照を得る。</li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-4" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=4"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="ガンビットについて"></a>
+<h2>ガンビットについて<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#ガンビットについて" class="wiki-anchor">¶</a></h2>
+<pre><code class="C syntaxhl"><span class="CodeRay"><span class="comment">// &lt;とりあえずif elseでどうにか、余裕があったら他の文法も導入&gt;</span>
+<span class="comment">// for文を実装するのは大変そうなので、for文を使わずに無理やり書く。</span>
+<span class="comment">// プログラミング教育という観点からは...。という感じだが、仕方ない。今の所このやり方になりそう。</span>
+<span class="directive">void</span> action_selection2(<span class="keyword">struct</span> BattleUnit *this, <span class="keyword">struct</span> BattleUnit *allyUnits[], <span class="keyword">struct</span> BattleUnit *enemyUnits[]) {
+    <span class="comment">// 3対3のバトル(敵キャラクター数は固定)において、</span>
+    <span class="comment">// HPが10以下の味方ユニットがいたら</span>
+    <span class="comment">// 左のユニットを優先に回復し、該当する味方がいない場合には、攻撃するガンビット</span>
+    <span class="keyword">if</span>(!allyUnits[<span class="integer">0</span>]-&gt;is_dead &amp;&amp; allyUnits[<span class="integer">0</span>]-&gt;hp &lt;= <span class="integer">10</span>) {
+        repair(allyUnits[<span class="integer">0</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!allyUnits[<span class="integer">1</span>]-&gt;is_dead &amp;&amp; allyUnits[<span class="integer">1</span>]-&gt;hp &lt;= <span class="integer">10</span>) {
+        repair(allyUnits[<span class="integer">1</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!allyUnits[<span class="integer">2</span>]-&gt;is_dead &amp;&amp; allyUnits[<span class="integer">2</span>]-&gt;hp &lt;= <span class="integer">10</span>) {
+        repair(allyUnits[<span class="integer">2</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!enemyUnitys[<span class="integer">0</span>]-&gt;is_dead) {
+        attack(this, enemyUnits[<span class="integer">0</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!enemyUnitys[<span class="integer">1</span>]-&gt;is_dead) {
+        attack(this, enemyUnits[<span class="integer">1</span>]);
+    }
+    <span class="keyword">else</span> {
+        attack(this, enemyUnits[<span class="integer">2</span>]);
+    }
+}
+</span></code></pre>
+<ul>
+<li>敵キャラクター数について固定しているのは、BattleUnitを配列で管理している都合上。
+
+<ul>
+<li>仲間が増えたら、[allyUnits[1]]ブロック、[allyUnits[2]]ブロックを解禁すれば良い。</li>
+</ul></li>
+<li>コンパイルについては対応するJavaScriptのソースコードに変換する。文字列から関数をパースできるのでこれでOK。</li>
+<li>上記のCのコードは次のように変換される。
+
+<ul>
+<li>変数名は基本キャメルケースで書く予定。</li>
+<li>第一引数はself(BattleUnit)、第二引数は効果の対象(BattleUnit、全体に効果のあるスキルの場合はBattleUnitの配列)</li>
+<li>一番左のユニットなら、この関数をglobal変数gameData.party[0].actionSelectionにセットする。</li>
+</ul></li>
+</ul>
+<pre><code class="js syntaxhl"><span class="CodeRay"><span class="keyword">function</span>(self, allyUnits, enemyUnits) {
+    <span class="keyword">if</span>(!allyUnits[<span class="integer">0</span>].isDead &amp;&amp; allyUnits[<span class="integer">0</span>].hp &lt;= <span class="integer">10</span>) {
+        <span class="keyword">return</span> self.skills.repair.execute(self, allyUnits[<span class="integer">0</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!allyUnits[<span class="integer">1</span>].isDead &amp;&amp; allyUnits[<span class="integer">1</span>].hp &lt;= <span class="integer">10</span>) {
+        <span class="keyword">return</span> self.skills.repair.execute(self, allyUnits[<span class="integer">1</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!allyUnits[<span class="integer">2</span>].isDead &amp;&amp; allyUnits[<span class="integer">2</span>].hp &lt;= <span class="integer">10</span>) {
+        <span class="keyword">return</span> self.skills.repair.execute(self, allyUnits[<span class="integer">2</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!enemyUnits[<span class="integer">0</span>].isDead) {
+        <span class="keyword">return</span> self.skills.attack.execute(self, enemyyUnits[<span class="integer">0</span>]);
+    }
+    <span class="keyword">else</span> <span class="keyword">if</span>(!enemyUnits[<span class="integer">1</span>].isDead) {
+        <span class="keyword">return</span> self.skills.attack.execute(self, enemyUnits[<span class="integer">1</span>]);
+    }
+    <span class="keyword">else</span> {
+        <span class="keyword">return</span> self.skills.attack.execute(self, enemyUnits[<span class="integer">2</span>]);
+    }
+
+}
+
+</span></code></pre>
+<hr>
+
+<div class="contextual" id="section-5" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=5"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="RPG設定について"></a>
+<h2>RPG設定について<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#RPG設定について" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>ENについては、ポケモンのPPと言うよりは、個人的にはシャドバで言うコストのようなものにするのがいいのではないかと思っています。
+
+<ul>
+<li>どのユニットも初期値2、毎ターン2回復、ためるコマンドで1回復、Max10</li>
+<li>通常攻撃で1消費、スキルでたくさん消費、足りなければ失敗。</li>
+<li>長期戦になりやすいので何かしらのテコ入れが必要。</li>
+</ul></li>
+<li>スキルの中身については色々考えなければならないです。
+
+<ul>
+<li>皆さんのアイデア募集します。コメント下に書いといてください。</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-6" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=6"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="BattleSceneへの遷移"></a>
+<h2>BattleSceneへの遷移<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#BattleSceneへの遷移" class="wiki-anchor">¶</a></h2>
+
+<p>マップ等からバトルへ遷移する方法。</p>
+<pre><code class="js syntaxhl"><span class="CodeRay"><span class="comment">// '/public/json/battle/battleX.jsonをpreload()しておく。</span>
+let json = game.assets[JSON_BATTLE_BATTLEx];
+game.pushScene(<span class="keyword">new</span> BattleScene(json));
+</span></code></pre>
+<p>因みにbattleX.jsonの中身はこんな感じに書かれている。</p>
+<pre><code class="json syntaxhl"><span class="CodeRay">{
+  <span class="key"><span class="delimiter">"</span><span class="content">battleName</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">battle1</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">num</span><span class="delimiter">"</span></span>:  <span class="integer">3</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">enemyNames</span><span class="delimiter">"</span></span>: [<span class="string"><span class="delimiter">"</span><span class="content">unitB-1</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">unitB-2</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">unitB-3</span><span class="delimiter">"</span></span>],
+  <span class="key"><span class="delimiter">"</span><span class="content">enemyFilePaths</span><span class="delimiter">"</span></span>: [
+    <span class="string"><span class="delimiter">"</span><span class="content">敵データへのパス</span><span class="delimiter">"</span></span>,
+    <span class="string"><span class="delimiter">"</span><span class="content">敵データへのパス</span><span class="delimiter">"</span></span>,
+    <span class="string"><span class="delimiter">"</span><span class="content">敵データへのパス</span><span class="delimiter">"</span></span>
+  ]
+}
+
+</span></code></pre>
+<div class="contextual" id="section-7" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=7"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="スキル強化について"></a>
+<h2>スキル強化について<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#スキル強化について" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>Skillクラスのコンストラクタにjsonデータを渡すことで具体的なスキルのインスタンスを生成し、BattleUnit.skillsに格納しておく。インスタンス変数名はスキル名と同じ。</li>
+<li>スキル強化については、BattleUnit.skills.スキル名.bonusを書き換える。
+
+<ul>
+<li>現状は、bonus.rate(初期値1.0)のみが存在し、これはスキルの効果値の補正倍率を表す。例えば、通常10ダメージのスキルでbonus.rate = 1.2なら12ダメージとなる。</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-8" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=8"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="コメント"></a>
+<h2>コメント<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#コメント" class="wiki-anchor">¶</a></h2>
+
+<p>意見ください。</p>
+
+<ul>
+<li>普通に良い気がする。ブロックで実現できるならいいけど、直書きだと初学者には厳しい？(中野)
+
+<ul>
+<li>最終的には構造体ポインタも書けるようになるといいけど(中野)</li>
+<li>やっぱり初心者にはちょっと...なところがあるよね。変数宣言とかもあって組むのは結構大変そう(山田)</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-9" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=9"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="スキルのアイデアを出すコーナー"></a>
+<h2>スキルのアイデアを出すコーナー<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#スキルのアイデアを出すコーナー" class="wiki-anchor">¶</a></h2>
+
+<div class="contextual" id="section-10" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=10"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="実装済みのもの"></a>
+<h3>実装済みのもの<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#実装済みのもの" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>通常攻撃(atk - def ダメージ)</li>
+<li>氷結斬り(単体攻撃、通常攻撃+αのダメージ)</li>
+<li>火炎放射(全体攻撃、固定ダメージ)</li>
+<li>リペア(単体回復)</li>
+<li>チャージ(EN増加)</li>
+</ul>
+
+<div class="contextual" id="section-11" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=11"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="とりあえずお披露目までに実装すべきもの"></a>
+<h3>とりあえず、お披露目までに実装すべきもの<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#とりあえずお披露目までに実装すべきもの" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>単体攻撃</li>
+<li>全体攻撃</li>
+<li>単体回復</li>
+</ul>
+
+<div class="contextual" id="section-12" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/edit?section=12"><img alt="Edit" src="./Battle - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="最終的に実装できたらいいもの"></a>
+<h3>最終的に実装できたらいいもの<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle#最終的に実装できたらいいもの" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>全体回復</li>
+<li>(属性とか作るなら)相手の情報がわかる技(FFのライブラ)</li>
+<li>攻撃アップ(与ダメージ増加)</li>
+<li>防御アップ(被ダメージ軽減)</li>
+</ul>
+
+</div>
+
+
+
+
+<div id="wiki_add_attachment">
+<p><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle" id="attach_files_link" onclick="$(&#39;#add_attachment_form&#39;).show(); return false;">新しいファイル</a></p>
+<form accept-charset="UTF-8" action="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle/add_attachment" enctype="multipart/form-data" id="add_attachment_form" method="post" style="display:none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="If7B0fQvFAVHkpQVWuZVtqI8vb84b3TwnY/plzv13vY="></div>
+  <div class="box">
+  <p><span id="attachments_fields">
+</span>
+<span class="add_attachment">
+<input class="file_selector" data-description-placeholder="任意のコメント" data-max-concurrent-uploads="2" data-max-file-size-message="このファイルはアップロードできません。添付ファイルサイズの上限(5 MB)を超えています。" data-max-file-size="5242880" data-upload-path="/lecture/exp4/redmine/uploads.js" multiple="multiple" name="attachments[dummy][file]" onchange="addInputFiles(this);" type="file">
+(サイズの上限: 5 MB)
+</span>
+
+</p>
+  </div>
+<input name="commit" type="submit" value="追加">
+<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/battle" onclick="$(&#39;#add_attachment_form&#39;).hide(); return false;">キャンセル</a>
+</form></div>
+
+<p class="other-formats">他の形式にエクスポート:  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle.pdf" class="pdf" rel="nofollow">PDF</a></span>
+  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle.html" class="html" rel="nofollow">HTML</a></span>
+  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Battle.txt" class="txt" rel="nofollow">TXT</a></span>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>ロード中...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> © 2006-2015 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>

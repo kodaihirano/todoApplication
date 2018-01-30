@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>Clkmemo - すすきすきすき - exp4 Redmine</title>
+<meta name="description" content="Redmine">
+<meta name="keywords" content="issue,bug,tracker">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="If7B0fQvFAVHkpQVWuZVtqI8vb84b3TwnY/plzv13vY=" name="csrf-token">
+<link rel="shortcut icon" href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/favicon.ico?1449305242">
+<link href="./Clkmemo - すすきすきすき - exp4 Redmine_files/jquery-ui-1.11.0.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Clkmemo - すすきすきすき - exp4 Redmine_files/application.css" media="all" rel="stylesheet" type="text/css">
+
+<script src="./Clkmemo - すすきすきすき - exp4 Redmine_files/jquery-1.11.1-ui-1.11.0-ujs-3.1.4.js" type="text/javascript"></script>
+<script src="./Clkmemo - すすきすきすき - exp4 Redmine_files/application.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(window).load(function(){ warnLeavingUnsaved('このページから移動すると、保存されていないデータが失われます。'); });
+//]]>
+</script>
+
+
+<!-- page specific tags -->
+  <script src="./Clkmemo - すすきすきすき - exp4 Redmine_files/attachments.js" type="text/javascript"></script>
+</head>
+<body class="project-ssk48 controller-wiki action-show">
+<div id="wrapper">
+<div id="wrapper2">
+<div id="wrapper3">
+<div id="top-menu">
+    <div id="account">
+        <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/my/account" class="my-account">個人設定</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/logout" class="logout" data-method="post" rel="nofollow">ログアウト</a></li></ul>    </div>
+    <div id="loggedas">ログイン中： <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/users/57" class="user active">hirano.k.ah</a></div>
+    <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/" class="home">ホーム</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/my/page" class="my-page">マイページ</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects" class="projects">プロジェクト</a></li>
+<li><a href="http://www.redmine.org/guide" class="help">ヘルプ</a></li></ul></div>
+
+<div id="header">
+    <div id="quick-search">
+        <form accept-charset="UTF-8" action="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+        <input name="wiki_pages" type="hidden" value="1">
+        <label for="q">
+          <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/search" accesskey="4">検索</a>:
+        </label>
+        <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+</form>        <select id="project_quick_jump_box" name="project_quick_jump_box" onchange="if (this.value != &#39;&#39;) { window.location = this.value; }"><option value="">プロジェクトへ移動...</option><option value="" disabled="disabled">---</option><option value="/lecture/exp4/redmine/projects/untweetable?jump=wiki">Untweetable</option><option selected="selected" value="/lecture/exp4/redmine/projects/ssk48?jump=wiki">すすきすきすき</option></select>
+    </div>
+
+    <h1>すすきすきすき</h1>
+
+    <div id="main-menu">
+        <ul><li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48" class="overview">概要</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/activity" class="activity">活動</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues" class="issues">チケット</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/new" accesskey="7" class="new-issue">新しいチケット</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/gantt" class="gantt">ガントチャート</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/issues/calendar" class="calendar">カレンダー</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki" class="wiki selected">Wiki</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/files" class="files">ファイル</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/repository" class="repository">リポジトリ</a></li>
+<li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/settings" class="settings">設定</a></li></ul>
+    </div>
+</div>
+
+<div id="main" class="">
+    <div id="sidebar">
+          
+<h3>Wiki</h3>
+<ul>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki">メインページ</a></li>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/index">索引(名前順)</a></li>
+  <li><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/date_index">索引(日付順)</a></li>
+</ul>
+
+
+        
+    </div>
+
+    <div id="content">
+        
+        <div class="contextual">
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit" accesskey="e" class="icon icon-edit">編集</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/watchers/watch?object_id=23&amp;object_type=wiki_page" class="wiki_page-23-watcher icon icon-fav-off" data-method="post" data-remote="true" rel="nofollow">ウォッチ</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/protect?protected=1" class="icon icon-lock" data-method="post" rel="nofollow">ロック</a>
+  
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/rename" class="icon icon-move">名前変更</a>
+  <a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo" class="icon icon-del" data-confirm="よろしいですか？" data-method="delete" rel="nofollow">削除</a>
+<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/history" class="icon icon-history">履歴</a>
+</div>
+
+<p class="breadcrumb"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Wiki">Wiki</a> » </p>
+
+
+<div class="wiki wiki-page">
+  <a name="CLK中野メモ"></a>
+<h1>CLK(中野)メモ<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#CLK中野メモ" class="wiki-anchor">¶</a></h1>
+
+<ul>
+<li>Wikiのトップページ汚しまくりで申し訳ないので移行</li>
+<li>別に共有したくないわけではないので(それはそう)閲覧書き込み大歓迎</li>
+<li>自身の脳内整理を兼ねてるので体裁も内容も汚いけど許して</li>
+</ul>
+
+<div class="contextual" id="section-2" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=2"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="苦労点"></a>
+<h2>苦労点<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#苦労点" class="wiki-anchor">¶</a></h2>
+
+<p>だいたい知見の欄にキレ気味に書いてる内容</p>
+
+<div class="contextual" id="section-3" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=3"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="MapScene及び関連クラス"></a>
+<h3>MapScene及び関連クラス<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#MapScene及び関連クラス" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>イベントを付与するタイミング(雑にやるとundefやnullを多く発生させる、更新前のデータを参照してしまう)
+
+<ul>
+<li>シーンをgame.currentSceneではなくthisで渡す,動的なプロパティはなるべくコンストラクタ末尾で渡すなど</li>
+</ul></li>
+<li>オブジェクト設置の場合分け</li>
+</ul>
+
+<div class="contextual" id="section-4" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=4"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="EventScene及び関連クラス"></a>
+<h3>EventScene及び関連クラス<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#EventScene及び関連クラス" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>Timeline関係(下にあるバグなど)
+
+<ul>
+<li>公式リファレンスとにらめっこしながら試行錯誤</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-5" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=5"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="SkillSelectScene"></a>
+<h3>SkillSelectScene<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#SkillSelectScene" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>カーソル2種の管理(操作、表示)
+
+<ul>
+<li>操作中の欄をシーンにプロパティとして持たせることで解決</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-6" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=6"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="CodingSceneフロントエンド"></a>
+<h3>CodingScene(フロントエンド)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#CodingSceneフロントエンド" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>そもそもenchantにHTML要素を直書きする力技
+
+<ul>
+<li>GitHub上のenchant.Scene等のソースコードを見ながら強引にDOMレイヤーの実体を取得、Ajaxと同じ感覚でゴリゴリ書いた</li>
+</ul></li>
+<li>HTMLテンプレートの取得(取得前にdocument.getElemettById()しようとすると失敗する問題)
+
+<ul>
+<li>req.onreadystatechange()の内部で行うように変更</li>
+</ul></li>
+<li>判定結果の表示欄(レイアウト、実装)
+
+<ul>
+<li>気合</li>
+</ul></li>
+<li>問題文が長すぎる場合にスクロールできるようにする、それで一定の体裁を保てるCSS
+
+<ul>
+<li>気合</li>
+</ul></li>
+<li>ソースコードをアップロードする処理
+
+<ul>
+<li>最初は普通のフォームデータとして送ろうとしたが、特殊文字やサイズなどの問題で失敗した</li>
+<li><a class="external" href="https://developer.mozilla.org/ja/docs/Web/Guide/Using_FormData_Objects">FormData オブジェクトの利用</a>←この方法でちゃんとバイナリファイルとして送信できた</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-7" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=7"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="Gamejudgeバックエンド"></a>
+<h3>Game.judge(バックエンド)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#Gamejudgeバックエンド" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>ソースコードファイルの取得(Playの標準機能の理解)
+
+<ul>
+<li>単にファイルそのものを暗黙のパラメータとして引数に<code>public static void judge(File code)</code>を指定すれば自動的に取得できた(上記によりちゃんとXMLフォームデータになってたので)</li>
+</ul></li>
+<li>システムコール、その実行結果の取得(bash標準出力や終了コードの取得)
+
+<ul>
+<li>そもそも今まで終了コードを意識したことがなく、コンパイルエラーを検知したいと思った際に根本的にその発想に至るまで苦労した</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-8" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=8"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="サンドボックス作成未遂"></a>
+<h3>サンドボックス作成(未遂)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#サンドボックス作成未遂" class="wiki-anchor">¶</a></h3>
+
+<p>Special Thanks: Wandbox(<a href="https://qiita.com/melpon/items/e871abb8cd2b15558a53">https://qiita.com/melpon/items/e871abb8cd2b15558a53</a>)</p>
+
+<ul>
+<li>Dockerそのものの理解(コンテナ、イメージなどの概念、仮想環境やLinuxの知識)
+
+<ul>
+<li>気合、ググリフォース</li>
+</ul></li>
+<li>HTTPやSSHへの理解(特にHTTPヘッダの実体) ※ほとんど未遂
+
+<ul>
+<li>Chromeデベロッパーツールとにらめっこ、気合</li>
+</ul></li>
+<li>Dockerコンテナ内部にHTTPサーバー設置(なるべく軽量なもの) ※未遂
+
+<ul>
+<li>無理</li>
+</ul></li>
+<li>サンドボックス化(リソース/パスの制限、無限ループ時などの強制離脱) ※未遂
+
+<ul>
+<li>無理</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-9" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=9"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="ページ全体"></a>
+<h3>ページ全体<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#ページ全体" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>ボックスレイアウト全般(特にenchant.Core内部で勝手に付与されるプロパティの確認/変更)
+
+<ul>
+<li>ググリフォース、気合、一部友人(別チーム)からのアドバイス</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-10" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=10"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="データ関係"></a>
+<h3>データ関係<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#データ関係" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>下記参照</li>
+</ul>
+
+<div class="contextual" id="section-11" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=11"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="その他"></a>
+<h3>その他<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#その他" class="wiki-anchor">¶</a></h3>
+
+<p>BGMとかSEとか作ろうかと思ってたけど時間なかった</p>
+
+<div class="contextual" id="section-12" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=12"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="参考文献"></a>
+<h3>参考文献<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#参考文献" class="wiki-anchor">¶</a></h3>
+
+<p>MDN web docs JavaScript(<a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">https://developer.mozilla.org/ja/docs/Web/JavaScript</a>)<br>
+だいたいこれ、あとは有象無象。<br>
+古い情報も多くて苦労した。</p>
+
+<div class="contextual" id="section-13" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=13"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="近況"></a>
+<h2>近況<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#近況" class="wiki-anchor">¶</a></h2>
+
+<div class="contextual" id="section-14" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=14"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="重要今後の進捗"></a>
+<h3>(重要)今後の進捗<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#重要今後の進捗" class="wiki-anchor">¶</a></h3>
+
+<p>MapScene/EventScene関連は大方終わった(と勝手に思ってる)のでスキルの設計と実装について試行錯誤しています。<br>
+その為、しばらくはgit等に見える進捗が減ると思いますがご容赦ください。<br>
+私の担当分野でまだ何か足りない部分があったり急ぎの用件があったら遠慮なく投げてください。</p>
+
+<div class="contextual" id="section-15" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=15"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="重要スキル強化のコード判定機能の動作要件"></a>
+<h3>(重要)スキル強化のコード判定機能の動作要件<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#重要スキル強化のコード判定機能の動作要件" class="wiki-anchor">¶</a></h3>
+
+<p>最終版ではサーバーサイドでBash及びDockerを使う可能性が強まってきたので、デバッグにご協力頂ける場合はインストールをお願いします。<br>
+Docker意外と軽いです。BashはGit for Windows同梱のGit Bashが便利です。</p>
+
+<div class="contextual" id="section-16" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=16"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="重要MessageWindowのAPI再変更"></a>
+<h3>(重要)MessageWindowのAPI再変更<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#重要MessageWindowのAPI再変更" class="wiki-anchor">¶</a></h3>
+
+<p>ウィンドウの表示もメッセージ送りもメッセージ末尾での非表示もMessageWindow.next()として共通化しました。<br>
+(理由:末尾での非表示とその次の表示が同一フレーム内で実行されるのを防ぐにはこれしか思いつかなかった)</p>
+<pre><code class="javascript syntaxhl"><span class="CodeRay">Scene.messageWindow.messages = [<span class="string"><span class="delimiter">"</span><span class="content">message1</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">message2</span><span class="delimiter">"</span></span>];
+Scene.messageWindow.next(); <span class="comment">// true, "message1"が書かれたウィンドウを表示</span>
+Scene.messageWindow.next(); <span class="comment">// true, 文字列を"message2"に変更</span>
+Scene.messageWindow.next(); <span class="comment">// false, ウィンドウを非表示</span>
+</span></code></pre>
+<p>ウィンドウが消えるタイミングを取得するには返り値を使うと良さげです。</p>
+
+<hr>
+
+<div class="contextual" id="section-17" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=17"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="ToDo"></a>
+<h2>ToDo<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#ToDo" class="wiki-anchor">¶</a></h2>
+
+<p>進行中</p>
+
+<ul>
+<li>スキル強化の詳細仕様策定</li>
+<li>ソースコード正誤判定のセキュアな設計/実装
+
+<ul>
+<li>Docker内部にデータをどう投げるか(Docker内部に簡易なサーバーを立ててpostする予定)</li>
+</ul></li>
+</ul>
+
+<p>だいたい出来たやつ</p>
+
+<ul>
+<li>EventSceneの設計・実装</li>
+<li>EventAreaをちゃんと実装</li>
+<li>イベント関連の簡易なフラグ設計&amp;実装</li>
+<li>ソースコード正誤判定の簡易な実装</li>
+<li>ゲーム画面と同じページでのテキストエディタの表示、及び内部処理</li>
+</ul>
+
+<p>保留</p>
+
+<ul>
+<li>DB設計</li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-18" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=18"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="API"></a>
+<h2>API<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#API" class="wiki-anchor">¶</a></h2>
+
+<p>後でちゃんと書きたい</p>
+
+<div class="contextual" id="section-19" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=19"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="EventScene"></a>
+<h3>EventScene<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#EventScene" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>and()は使用不可、複数のアクションの並列実行ができない
+
+<ul>
+<li>どうしても必要ならばどうにかします</li>
+<li>でも基本は無いものと考えていただけると助かります</li>
+</ul></li>
+<li>tl.delay(time) (※EventのJSONでいう"wait")の引数timeと前後の状況次第でバグる
+
+<ul>
+<li>完全に謎</li>
+<li>自然数なら問題なさそうな気がする</li>
+</ul></li>
+<li>Escキーでスキップ可</li>
+<li>イベント中に限らずゲーム中いつでもEnterキーでfpsを倍速/通常に切り替え可</li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-20" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=20"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="ゲーム部分の仕様及びenchantjsのもろもろ"></a>
+<h2>ゲーム部分の仕様及びenchant.jsのもろもろ<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#ゲーム部分の仕様及びenchantjsのもろもろ" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>game.start()の代わりにgame.debug()で起動するとデバッグモードになる。スプライトが赤枠に囲まれて見やすくなり便利なので利用しよう。
+
+<ul>
+<li>大きさが0のスプライトは残念ながら表示されない。</li>
+</ul></li>
+<li>ボタン単押しでイベントを起こす場合は↓でおｋ。</li>
+</ul>
+<pre><code class="javascript syntaxhl"><span class="CodeRay">Scene.addEventListener(<span class="string"><span class="delimiter">"</span><span class="content">(押すボタン)buttondown</span><span class="delimiter">"</span></span>, ()=&gt;{
+  <span class="comment">//イベントの内容</span>
+});
+</span></code></pre>
+<ul>
+<li>PlayerとResponsiveObjectは1マス分の実体(instance.entity)を持ち、それにより隣接判定を行う
+
+<ul>
+<li>現在VillagerとBoxがResponsiveObjectを継承している</li>
+<li>宝箱以外のオブジェクト(地面に落ちてるキーアイテム等)やShopperも継承予定</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-21" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=21"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="Scenetlのダメな例"></a>
+<h3>Scene.tlのダメな例<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#Scenetlのダメな例" class="wiki-anchor">¶</a></h3>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// EventScene.js line.16 in Initialize()</span>
+<span class="local-variable">this</span>.tl.action(()=&gt;{});
+<span class="keyword">for</span>(const ev of <span class="local-variable">this</span>.events.event)<span class="local-variable">this</span>.parseEvent(ev);
+<span class="local-variable">this</span>.tl.next();
+
+<span class="comment">// line.55 in parseEvent(ev)</span>
+<span class="keyword">case</span> <span class="string"><span class="delimiter">"</span><span class="content">map</span><span class="delimiter">"</span></span>:
+  <span class="local-variable">this</span>.tl..then(()=&gt;{
+    <span class="local-variable">this</span>.initMap(ev[<span class="integer">1</span>], ev[<span class="integer">2</span>]);
+  });
+  <span class="keyword">break</span>;
+
+</span></code></pre>
+<p>結果: EventScene中で実際にマップ切り替わる際、前後の処理によっては毎フレームinitMap()を繰り返したまま無限ループ<br>
+<strong>は？？？？？？？？？？？？？？？？？</strong></p>
+
+<p>(※上記map処理以外もthen()を使用すると多くが同じ挙動になる。仕様なのかバグなのかは不明)</p>
+
+<div class="contextual" id="section-22" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=22"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="Scenetlの正解仮"></a>
+<h3>Scene.tlの正解(仮)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#Scenetlの正解仮" class="wiki-anchor">¶</a></h3>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// line.55 in parseEvent(ev)</span>
+<span class="keyword">case</span> <span class="string"><span class="delimiter">"</span><span class="content">map</span><span class="delimiter">"</span></span>:
+  <span class="local-variable">this</span>.tl.action({
+    onactionstart(){<span class="local-variable">this</span>.tl.next();},
+    onactionend(){
+      <span class="local-variable">this</span>.initMap(ev[<span class="integer">1</span>], ev[<span class="integer">2</span>]);
+    }
+  });
+  <span class="keyword">break</span>;
+</span></code></pre>
+<p>結果: ちゃんと一度のみinitMap()が実行され、this.tlの次の処理へ進む。</p>
+
+<div class="contextual" id="section-23" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=23"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="thisのスコープ"></a>
+<h3>thisのスコープ<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#thisのスコープ" class="wiki-anchor">¶</a></h3>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// in MapScene.initialize()</span>
+
+<span class="local-variable">this</span>.addEventListener(<span class="string"><span class="delimiter">"</span><span class="content">enterframe</span><span class="delimiter">"</span></span>, ()=&gt;{
+      <span class="keyword">if</span>(encPos.intersect(<span class="local-variable">this</span>.player)){
+        <span class="local-variable">this</span>.addChild(<span class="local-variable">this</span>.message);
+      }<span class="keyword">else</span>{
+        <span class="local-variable">this</span>.removeChild(<span class="local-variable">this</span>.message);
+        shopper.serifId = <span class="integer">0</span>;
+        <span class="local-variable">this</span>.message.msg.text = shopper.serif[shopper.serifId];
+
+      }
+    });
+</span></code></pre>
+<p>このアロー関数(無名関数)の内側の"this"はアロー関数ではなくMapSceneインスタンスを指す。<br>
+便利。</p>
+
+<ul>
+<li>"function(){}"の場合は異なる恐れがある</li>
+</ul>
+
+<div class="contextual" id="section-24" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=24"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="フレームによるの線形変化について"></a>
+<h3>フレームによるの線形変化について<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#フレームによるの線形変化について" class="wiki-anchor">¶</a></h3>
+
+<p>フェードイン・フェードアウト等でフレーム毎に値を加算・減算する場合、変化値を2の整数乗にしないとバグる場合がある。<br>
+Entity.opacityの場合は 0.25, 0.125, 0.0625など。</p>
+
+<div class="contextual" id="section-25" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=25"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="enchantjsのクラスと外部クラスとの連携恐らくバグ"></a>
+<h3>enchant.jsのクラスと外部クラスとの連携(恐らくバグ)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#enchantjsのクラスと外部クラスとの連携恐らくバグ" class="wiki-anchor">¶</a></h3>
+
+<p>グローバル変数gemaDataはES6記法のclass GameDataで定義されている。<br>
+&gt; gameData = new GameData();</p>
+
+<p><strong>&lt;失敗例&gt;</strong></p>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// MapScene.js Line.63 </span>
+<span class="comment">// for(const(int) i = ...) for(const(int) j = ...)</span>
+
+<span class="keyword">if</span>(!gameData.box[<span class="local-variable">this</span>.mapname] || !gameData.opened(<span class="local-variable">this</span>.mapname, j, i)){ <span class="comment">// always judged to be true.</span>
+  <span class="local-variable">this</span>.stage.addChild(<span class="keyword">new</span> Box(<span class="local-variable">this</span>, obj[<span class="integer">1</span>], obj[<span class="integer">2</span>], j, i));
+}
+</span></code></pre>
+<p>gameData.opened(this.mapname, j, i)が必ずfalseを返すらしい。<br>
+が、Chromeのコンソールから<br>
+&gt; gameData.opened("samplemap0", 0, 5);<br>
+を叩くとちゃんとtrueが帰ってくる。gameData.box.samplemap0にもちゃんと[0,5]が格納されている。</p>
+
+<p><strong>&lt;結論&gt;</strong></p>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="keyword">if</span>(!gameData.box[<span class="local-variable">this</span>.mapname] || !gameData.opened(<span class="local-variable">this</span>.mapname, Number(j), Number(i))){
+  <span class="local-variable">this</span>.stage.addChild(<span class="keyword">new</span> Box(<span class="local-variable">this</span>, obj[<span class="integer">1</span>], obj[<span class="integer">2</span>], j, i));
+}
+</span></code></pre>
+<p>納得いかない。</p>
+
+<div class="contextual" id="section-26" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=26"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="sceneremovechildthisの罠"></a>
+<h3>scene.removechild(this)の罠<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#sceneremovechildthisの罠" class="wiki-anchor">¶</a></h3>
+
+<p>子ノードからthis.scene.removechild(this)するとthis.sceneがnullになるっぽい。<br>
+なるべくしない方が良い。(代わりにイベントを消去する等で対応)</p>
+
+<div class="contextual" id="section-27" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=27"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="gamecurrentSceneの注意点"></a>
+<h3>game.currentSceneの注意点<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#gamecurrentSceneの注意点" class="wiki-anchor">¶</a></h3>
+
+<p>Sceneの子クラスはinitialize()が完了して初めてSceneスタックに積まれるらしく、initialize()の途中でgame.currentSceneを取得するとその手前のSceneになる。<br>
+initialize()内部で呼び出されるメソッド(コンストラクタ)に呼び出し元Sceneを教えたい場合は</p>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// in FooScene.initialize(), where FooScene extends enchant.Scene</span>
+<span class="local-variable">this</span>.addChild(<span class="keyword">new</span> Bar(<span class="local-variable">this</span>));
+</span></code></pre>
+<p>のように引数としてthisを渡すか、</p>
+<pre><code class="javascript syntaxhl"><span class="CodeRay"><span class="comment">// in FooScene.initialize(), where FooScene extends enchant.Scene</span>
+nextScene = <span class="local-variable">this</span>; <span class="comment">// global variable</span>
+<span class="local-variable">this</span>.addChild(<span class="keyword">new</span> Bar());
+
+<span class="comment">// in Bar.initialize()</span>
+<span class="local-variable">this</span>.scene = nextScene;
+</span></code></pre>
+<p>次のSceneとして仮置きするようにする。</p>
+
+<hr>
+
+<div class="contextual" id="section-28" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=28"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="スキル強化"></a>
+<h2>スキル強化<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#スキル強化" class="wiki-anchor">¶</a></h2>
+
+<p><del><a class="external" href="https://wandbox.org/">Wandbox</a>を使用する方針</del>。日本語ドキュメントは偉大。<br>
+以下、APIをなんとなく触ってみて得た知見。</p>
+
+<ul>
+<li>コンパイルするソースコードは単一ファイルのみだが入力ファイルは複数対応
+
+<ul>
+<li>なんとC/C++の場合はヘッダファイル(.h)をincludeすれば普通に分割コンパイルできる</li>
+</ul></li>
+<li>実行時オプションは使えない、というかスクリプト言語用の物でC言語には関係ないものらしい
+
+<ul>
+<li>常に"$ gcc code [compiler-opton-raw]"→"$ ./a.out"が実行されるっぽい</li>
+<li>従って標準入力のリダイレクト("$ ./a.out &lt; foo.txt"みたいなの)は不可</li>
+</ul></li>
+</ul>
+
+<p>Wandboxを参考にDockerで環境構築中。</p>
+
+<ul>
+<li>お披露目のとき、Dockerどうすんの？？？(計算機室のMacには入ってない)
+
+<ul>
+<li><a class="external" href="https://ngrok.com/product">ngrok</a>とか？</li>
+<li>一旦Dockerを無視してローカルでgcc動かすのもアリ</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-29" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=29"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="メモほぼ自分用"></a>
+<h3>メモ(ほぼ自分用)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#メモほぼ自分用" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li><a class="external" href="https://qiita.com/paperlefthand/items/82ab6df4a348f6070a55">DockerコンテナでFlaskを起動し, JSONデータのPOSTとGET on @Qiita</a></li>
+<li><a class="external" href="http://pppurple.hatenablog.com/entry/2016/07/03/003425">DockerをWindows7にインストールして触ってみる - abcdefg.....</a></li>
+<li><a class="external" href="https://qiita.com/YumaInaura/items/1bf6d76f97d73ae7c804">Docker 初心者 |  python サーバーを起動してローカルからアクセスする | 公式チュートリアル part2 より on @Qiita</a></li>
+<li><a class="external" href="https://qiita.com/suzuki_y/items/212ae68059a2c340b79c">Javaで外部プロセス実行(システムコール)を行う on @Qiita</a></li>
+<li><a class="external" href="https://qiita.com/melpon/items/e871abb8cd2b15558a53#fnref4">Wandboxを支える技術（2017年版）</a></li>
+<li><a class="external" href="https://qiita.com/curseoff/items/a9e64ad01d673abb6866">Dockerコマンドメモ on @Qiita</a></li>
+<li><a class="external" href="https://qiita.com/mamemomonga/items/b5f765e3adc902f5e28d">Dockerコンテナ内のファイルをrsyncをつかってやりとりする</a></li>
+<li><a class="external" href="https://teratail.com/questions/66952">dockerコマンドをコマンドプロンプトから利用</a></li>
+</ul>
+
+<div class="contextual" id="section-30" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=30"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="lt結論gt"></a>
+<h3>&lt;結論&gt;<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#lt結論gt" class="wiki-anchor">¶</a></h3>
+
+<p>まだ</p>
+
+<hr>
+
+<div class="contextual" id="section-31" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=31"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="DB案"></a>
+<h2>DB案<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#DB案" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>Play!のモデルでアカウント管理</li>
+<li>「名前」「パスワード」「レベル・経験値」「所持金」など、プレイヤーと一対一関係のデータはアカウントと紐付けすればよい</li>
+<li>一本道なシナリオフラグはイベントID(整数値)を↑に含めればいいが、宝箱やサブイベント等はどうDBに実装するか
+
+<ul>
+<li>各々のクラスのIDとプレイヤーIDの結合テーブルを作れば一応実現できる、がレコード数が爆発する</li>
+<li>ショップの在庫とか実装すると更に悲惨</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-32" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=32"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="解決案"></a>
+<h3>解決案<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#解決案" class="wiki-anchor">¶</a></h3>
+
+<p>以下のようなプレイヤーデータをmodelとは別に作る</p>
+<pre><code class="json syntaxhl"><span class="CodeRay">{
+  <span class="key"><span class="delimiter">"</span><span class="content">playerID</span><span class="delimiter">"</span></span>: <span class="integer">1</span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">subEvent</span><span class="delimiter">"</span></span>:{
+    <span class="key"><span class="delimiter">"</span><span class="content">map5</span><span class="delimiter">"</span></span>: [<span class="integer">1</span>],
+  },
+  <span class="key"><span class="delimiter">"</span><span class="content">box</span><span class="delimiter">"</span></span>:{
+    <span class="key"><span class="delimiter">"</span><span class="content">map0</span><span class="delimiter">"</span></span>: [<span class="integer">0</span>,<span class="integer">1</span>],
+    <span class="key"><span class="delimiter">"</span><span class="content">map1</span><span class="delimiter">"</span></span>: [<span class="integer">1</span>]
+  }
+}
+</span></code></pre>
+<p>この場合、プレイヤー1はmap5のサブイベントID1のサブイベントをこなし、map0の宝箱ID0と宝箱ID1の宝箱、map1の宝箱ID1の宝箱を開いたことになる。</p>
+
+<div class="contextual" id="section-33" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=33"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="欠点"></a>
+<h3>欠点<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#欠点" class="wiki-anchor">¶</a></h3>
+
+<ul>
+<li>アップデートの際にIDがズレてセーブデータの互換性が壊れるかもしれない</li>
+<li>店のデータの記述が悲惨になる
+
+<ul>
+<li>人が全く読まない前提なら問題ない</li>
+</ul></li>
+<li>いつ取得すんの
+
+<ul>
+<li>起動するたびに全部取得したら重い？</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-34" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=34"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="その他-2"></a>
+<h3>その他<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#その他-2" class="wiki-anchor">¶</a></h3>
+
+<p>サーバーにセーブされたデータは↑で管理するとして、セーブデータではなく現在進行中のゲームデータはどう管理するか</p>
+
+<ul>
+<li>クライアント側に置いておくとメモリ的に重い？
+
+<ul>
+<li>sessionStorageなる物があるらしい→<a class="external" href="https://qiita.com/uralogical/items/ade858ccfa164d164a3b">sessionStorageをつかってみる</a></li>
+</ul></li>
+<li>JSなので不正にデータ改ざんされる可能性はある
+
+<ul>
+<li>目的と対象層を考えると特に関係ない気もする(不正できるなら初学者向けの勉強いらないじゃん)</li>
+<li>不正したところでゲームを不正に進められるだけで、セキュリティなどの問題があるわけではない</li>
+</ul></li>
+</ul>
+
+<div class="contextual" id="section-35" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=35"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="とある有識者に聞いた話"></a>
+<h3>とある有識者に聞いた話<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#とある有識者に聞いた話" class="wiki-anchor">¶</a></h3>
+
+<p>「H2(Play!で採用されているRDBMS)なら最適化も行われるし気にしなくて大丈夫じゃない？」</p>
+
+<hr>
+
+<div class="contextual" id="section-36" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=36"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="全体的な小話"></a>
+<h2>全体的な小話<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#全体的な小話" class="wiki-anchor">¶</a></h2>
+
+<ul>
+<li>マップ中でイベントを起こすこと自体は難しくないが、(そのイベント前後を含め)フラグによってマップの状態が変わるのをどう実装しよう
+
+<ul>
+<li>どうにかなりそう</li>
+</ul></li>
+<li>enchant.jsはrequire.jsによるモジュール化には対応してるらしいけど、学習コストが……
+
+<ul>
+<li>我非力なり、無念。</li>
+</ul></li>
+</ul>
+
+<hr>
+
+<div class="contextual" id="section-37" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=37"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="質問意見要望箱"></a>
+<h2>質問・意見・要望箱<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#質問意見要望箱" class="wiki-anchor">¶</a></h2>
+
+<p><del>匿名でもかまわないので、</del>(履歴に名前は残るけど)何かあったら遠慮なく書いて。<br>
+「将来的に実装してほしい」でも「早急に実装してほしい」でも「お前が作ったAPIのここがクソだから仕様変更しろ」でも何でもいいです。(真面目な話、引数が多すぎて可読性が下がってるコンストラクタやインスタンスの従属のネストが深すぎる部分があるので)</p>
+
+<hr>
+
+<div class="contextual" id="section-38" title="このセクションを編集"><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/edit?section=38"><img alt="Edit" src="./Clkmemo - すすきすきすき - exp4 Redmine_files/edit.png"></a></div><a name="緊急連絡先LINEなどの反応がない時"></a>
+<h2>緊急連絡先(LINEなどの反応がない時)<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo#緊急連絡先LINEなどの反応がない時" class="wiki-anchor">¶</a></h2>
+
+<p><a class="external" href="https://twitter.com/clk_rhythm">Twitter</a><br>
+Gmail: <a href="mailto:nightsky444@gmail.com">nightsky444@gmail.com</a></p>
+
+</div>
+
+
+
+
+<div id="wiki_add_attachment">
+<p><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo" id="attach_files_link" onclick="$(&#39;#add_attachment_form&#39;).show(); return false;">新しいファイル</a></p>
+<form accept-charset="UTF-8" action="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo/add_attachment" enctype="multipart/form-data" id="add_attachment_form" method="post" style="display:none;"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="If7B0fQvFAVHkpQVWuZVtqI8vb84b3TwnY/plzv13vY="></div>
+  <div class="box">
+  <p><span id="attachments_fields">
+</span>
+<span class="add_attachment">
+<input class="file_selector" data-description-placeholder="任意のコメント" data-max-concurrent-uploads="2" data-max-file-size-message="このファイルはアップロードできません。添付ファイルサイズの上限(5 MB)を超えています。" data-max-file-size="5242880" data-upload-path="/lecture/exp4/redmine/uploads.js" multiple="multiple" name="attachments[dummy][file]" onchange="addInputFiles(this);" type="file">
+(サイズの上限: 5 MB)
+</span>
+
+</p>
+  </div>
+<input name="commit" type="submit" value="追加">
+<a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo" onclick="$(&#39;#add_attachment_form&#39;).hide(); return false;">キャンセル</a>
+</form></div>
+
+<p class="other-formats">他の形式にエクスポート:  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo.pdf" class="pdf" rel="nofollow">PDF</a></span>
+  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo.html" class="html" rel="nofollow">HTML</a></span>
+  <span><a href="https://www.se.cs.titech.ac.jp/lecture/exp4/redmine/projects/ssk48/wiki/Clkmemo.txt" class="txt" rel="nofollow">TXT</a></span>
+</p>
+
+
+        
+        <div style="clear:both;"></div>
+    </div>
+</div>
+</div>
+
+<div id="ajax-indicator" style="display:none;"><span>ロード中...</span></div>
+<div id="ajax-modal" style="display:none;"></div>
+
+<div id="footer">
+  <div class="bgl"><div class="bgr">
+    Powered by <a href="http://www.redmine.org/">Redmine</a> © 2006-2015 Jean-Philippe Lang
+  </div></div>
+</div>
+</div>
+</div>
+
+
+
+</body></html>
